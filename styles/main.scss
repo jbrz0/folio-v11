@@ -1,0 +1,39 @@
+@import 'common/variables';
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #ece7e7;
+}
+
+*:focus {
+	outline: none;
+}
+
+@font-face {
+    font-family: Fira;
+    src: url(FiraCode-Bold.ttf);
+}
+
+*, p, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: 900;
+}
+
+.fira {
+	font-family: 'Fira', monospace;
+}
+
+.yellow { color: $yellow; }
+.green { color: $green; }
+.red { color: $red; }
+.teal { color: $teal; }

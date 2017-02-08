@@ -1,0 +1,112 @@
+@import 'common/variables';
+
+.navWrap {
+  background: transparent;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 44px;
+}
+
+.logoNav {
+  width: 100%;
+  max-width: 138px;
+  margin-left: 10px;
+  top: 1px;
+  position: relative;
+}
+
+#logoDark,
+#menuDark {
+  display: none;
+}
+
+.menuBtn {
+  width: 24px;
+  top: 9px;
+  position: fixed;
+  right: 14px;
+  cursor: pointer;
+}
+
+.activeNav {
+  background: $beige;
+}
+
+.menuWrap {
+  background: $red;
+  width: 300px;
+  height: 100%;
+  z-index: 5;
+  position: fixed;
+  right: 0;
+  left: auto;
+}
+
+.modalBtnClose {
+  background: transparent;
+  border: none;
+  float: right;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  top: 10px;
+  position: relative;
+  right: 10px;
+  .modalBtnCloseImg {
+    width: 18px;
+  }
+}
+
+.menuList {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 250px;
+  h2 {
+    color: $white;
+    margin-bottom: 0px;
+  }
+  ul {
+    // list-style-type: thai;
+    margin-top: 10px;
+    list-style-type: none;
+    padding-left: 0;
+    color: $white;
+  }
+  ul li span {
+    position: relative;
+    left: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  ul li:before {
+    content: "\2C3";
+    font-size: 1.5em;
+    position: relative;
+    top: 9px;
+  }
+}
+
+.bottomMenuWrap {
+  background: yellow;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  bottom: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0;
+  .buttomMenuBtn {
+    width: 50%;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    height: 20px;
+    margin: 10px;
+    display: inline-block;
+    float: left;
+  }
+}
