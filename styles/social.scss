@@ -13,6 +13,10 @@
   width: 25%;
   display: inline-block;
   float: left;
+  a {
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .socialCard {

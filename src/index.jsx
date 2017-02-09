@@ -1,16 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import Home from './home.jsx';
+// import { Router, Route, Link, browserHistory } from 'react-router';
 
-render( <AppContainer><Home/></AppContainer>, document.querySelector("#app"));
+import App from './app.jsx'
+// import Home from './Home/Home.js';
+
+
+
+let injectTapEventPlugin = require('react-tap-event-plugin');
+window.React = React;
+injectTapEventPlugin();
+
+
+render(<App />, document.getElementById('app'));
 
 if (module && module.hot) {
   module.hot.accept('./home.jsx', () => {
-    const App = require('./home.jsx').default;
+    // const AppInner = require('./Home/Home.js').default;
     render(
       <AppContainer>
-        <Home/>
+        <App/>
       </AppContainer>,
       document.querySelector("#app")
     );

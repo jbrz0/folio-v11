@@ -98,3 +98,55 @@
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+
+@media (max-width: 990px) {
+  .homeSectionRight {
+    width: 90%;
+  }
+  .homeSectionRight h1 {
+    font-size: 22px;
+  }
+  .homeSectionRight p {
+    font-size: 14px;
+  }
+  .processWrap span {
+    font-size: 12px;
+  }
+  .homeBtn {
+    font-size: 14px;
+    padding: 8px 22px;
+    margin-top: 16px;
+  }
+  .homeSectionRight p {
+    padding-bottom: 0px;
+    margin-bottom: 8px;
+    padding-right: 0px;
+  }
+  .homeSectionWrap {
+    width: 70%;
+  }
+}
+
+@media (max-width: 550px) {
+  .homeSectionLeft {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .logoHome {
+    max-width: 180px !important;
+  }
+}
+
+@media (max-width: 910px) {
+  .socialGrid {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .socialGrid {
+    width: 100% !important;
+  }
+}

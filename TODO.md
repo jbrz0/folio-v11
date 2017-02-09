@@ -1,1 +1,5 @@
 - particle effect homepage
+- titles individual
+- animate menu
+- home/email btn in menu
+- menu list padding

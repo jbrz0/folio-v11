@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import {Link} from 'react-router';
 import LogoLight from '../img/logo-light.svg';
 import LogoDark from '../img/logo-dark.svg';
 import MenuBtn from '../img/menu-btn.svg';
@@ -46,13 +47,13 @@ function getScrollPosition(){
     if(scrollObject.y > window.innerHeight - 50) {
         setStyle('nav', {'background': '#F8F5F9', 'transition': '1s'});
         setStyle('logoLight', {'display': 'none', 'transition': '1s'});
-        setStyle('logoDark', {'display': 'block', 'transition': '1s'});
+        setStyle('logoDark', {'display': 'inline-block', 'transition': '1s'});
         setStyle('menuLight', {'display': 'none', 'transition': '1s'});
         setStyle('menuDark', {'display': 'block', 'transition': '1s'});
         document.activeElement.blur();
     } else {
         setStyle('nav', {'background': 'transparent', 'transition': '1s'});
-        setStyle('logoLight', {'display': 'block', 'transition': '1s'});
+        setStyle('logoLight', {'display': 'inline-block', 'transition': '1s'});
         setStyle('logoDark', {'display': 'none', 'transition': '1s'});
         setStyle('menuLight', {'display': 'block', 'transition': '1s'});
         setStyle('menuDark', {'display': 'none', 'transition': '1s'});
@@ -94,8 +95,8 @@ export default class Nav extends React.Component {
     return (
       <div>
         <div className="navWrap" id="nav">
-          <img src={LogoLight} className="logoNav" id="logoLight" alt="Justin Brazeau" />
-          <img src={LogoDark} className="logoNav" id="logoDark" alt="Justin Brazeau" />
+          <Link to="/"><img src={LogoLight} className="logoNav" id="logoLight" alt="Justin Brazeau" /></Link>
+          <Link to="/"><img src={LogoDark} className="logoNav" id="logoDark" alt="Justin Brazeau" /></Link>
           <img src={MenuBtn} className="menuBtn" id="menuLight" alt="Menu" onClick={this.openModal} />
           <img src={MenuBtnDark} className="menuBtn" id="menuDark" alt="Menu" onClick={this.openModal} />
         </div>
@@ -116,17 +117,48 @@ export default class Nav extends React.Component {
           <div className="menuList">
           <h2>Projects</h2>
             <ul>
-              <li><span>Chart Suite</span></li>
-              <li><span>Terminal UI</span></li>
-              <li><span>Future Homes</span></li>
-              <li><span>Odd Scenes</span></li>
-              <li><span>WallTagged</span></li>
-              <li><span>Gold Tooth</span></li>
+              <Link to="chart-suite"><li><span>Chart Suite</span></li></Link>
+              <Link to="terminal-ui"><li><span>Terminal UI</span></li></Link>
+              <Link to="homes-from-the-future"><li><span>Future Homes</span></li></Link>
+              <Link to="odd-scenes"><li><span>Odd Scenes</span></li></Link>
+              <Link to="walltagged"><li><span>WallTagged</span></li></Link>
+              <Link to="gold-tooth"><li><span>Gold Tooth</span></li></Link>
             </ul>
           </div>
-          <div className="bottomMenuWrap">
-            <div className="buttomMenuBtn"></div>
-            <div className="buttomMenuBtn"></div>
+          <div className="bottonMenuWrap">
+            <div className="buttonMenu">
+              <a href="http://be.net/justinbrazeau">
+                <div className="buttonMenuInner btnMenuLeft">
+                  <i className="fa fa-behance" aria-hidden="true"></i>
+                  <span>behance</span>
+                </div>
+              </a>
+            </div>
+            <div className="buttonMenu">
+              <a href="http://codepen.io/brz0">
+                <div className="buttonMenuInner btnMenuRight">
+                  <i className="fa fa-codepen" aria-hidden="true"></i>
+                  <span>codepen</span>
+                </div>
+              </a>
+            </div>
+            <div className="buttonMenu">
+              <a href="http://twitter.com/justinbrazeau">
+                <div className="buttonMenuInner btnMenuLeft buttonMenuInnerBottom">
+                  <i className="fa fa-twitter" aria-hidden="true"></i>
+                  <span>twitter</span>
+                </div>
+              </a>
+            </div>
+            <div className="buttonMenu">
+              <a href="http://github.com/brz0">
+                <div className="buttonMenuInner btnMenuRight buttonMenuInnerBottom">
+                  <i className="fa fa-github" aria-hidden="true"></i>
+                  <span>github</span>
+                </div>
+              </a>
+            </div>
+
           </div>
         </Modal>
 
