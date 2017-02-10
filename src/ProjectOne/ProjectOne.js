@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../Nav/Nav.js';
 import {Link} from 'react-router';
 import ReactTooltip from 'react-tooltip';
+import LazyLoad from 'react-lazyload';
 var Scroll  = require('react-scroll');
 var Element    = Scroll.Element;
 const {Fullpage, Slide, TopNav} = require('fullpage-react');
@@ -148,7 +149,7 @@ export default class ProjectOne extends React.Component {
               <div className="projColLeft">
                 <h1>Concept</h1>
                 <p>There is a number of software tools that let you create chart presentations natively on the OS, and also many options for developers to build them in browser. However there isn’t as many options for real time editing in browser. The quick updates, high interactivity of the charts, and responsiveness add to the benefits of this concept.</p>
-                <Gallery photos={PhotosConcept} preloadNextImage={false} />
+                 <LazyLoad height={0}><Gallery photos={PhotosConcept} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -171,7 +172,7 @@ export default class ProjectOne extends React.Component {
               <div className="projColLeft">
                 <h1>Wireframes</h1>
                 <p>The wireframes covered a wide range of possibilities for the chart layouts and behaviour for this project, which led an excessive amount of initial concepts. The screens mapped out were initially mapped for some extra features, and alternate behaviours. The chart editor page has quite a few options as well initially that ended up being one result.</p>
-                <Gallery photos={PhotosWireframe} preloadNextImage={false} />
+                <LazyLoad height={0}><Gallery photos={PhotosWireframe} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -193,7 +194,7 @@ export default class ProjectOne extends React.Component {
               <div className="projColLeft">
                 <h1>UI</h1>
                 <p>As with the wireframes, the UI mockups for this project initially were extensive. The mockups reduced a few of the ideas in wireframes, and helped to hone down and focus on the important layouts for the initial version of the web app. This stage also had some refactoring of the layout for the same reason. In this stage other responsive elements were worked out, as well as finalizing the chart editor.</p>
-                <Gallery photos={PhotosWireframe} preloadNextImage={false} />
+                <LazyLoad height={0}><Gallery photos={PhotosWireframe} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -215,7 +216,7 @@ export default class ProjectOne extends React.Component {
               <div className="projColLeft">
                 <h1>Branding</h1>
                 <p>The main goal for the branding of this project is to visually simplify the users data into something easily digestible, while of course looking good simultaniously. The process work for the logo had some predictable chart type solutions, and some abstract idea progression. The best outcome from this came with a geometric shape resembling a few different charts combined. An in between of the obvious chart type logo, and some nice looking abstract geometric shapes.</p>
-                <Gallery photos={PhotosWireframe} preloadNextImage={false} />
+                <LazyLoad height={0}><Gallery photos={PhotosWireframe} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -237,7 +238,7 @@ export default class ProjectOne extends React.Component {
               <div className="projColLeft">
                 <h1>Features</h1>
                 <p>Layout options were built with re useable components to be added throughout the layouts, and possible future layouts. The charts themselves have extensive interactivity that adjust in real time to the user input. The data is also displayed with a high level of interaction on hover/touch events. Forms and buttons have a high level of contract and some basic animations for ease of navigation.</p>
-                <Gallery photos={PhotosWireframe} preloadNextImage={false} />
+                <LazyLoad height={0}><Gallery photos={PhotosWireframe} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
