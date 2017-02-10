@@ -3,3 +3,4 @@
 - animate menu
 - home/email btn in menu
 - menu list padding
+- factor logo into sidebar

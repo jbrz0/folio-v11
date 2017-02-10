@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
 import {Link} from 'react-router';
-import ErrorBot from '../img/ErrorBot.svg';
+import ErrorBot from '../img/ErrorBot-NotFound.svg';
 import HomeBgLink from '../img/bg.png';
 const HomeBg = {backgroundImage: 'url(' + HomeBgLink + ')'};
 

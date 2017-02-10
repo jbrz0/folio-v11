@@ -6,6 +6,7 @@ import NoMatch from './NoMatch/NoMatch.js';
 // import Layout from './layout.jsx';
 
 import ProjectOne from './ProjectOne/ProjectOne.js';
+import ProjectTwo from './ProjectTwo/ProjectTwo.js';
 
 export default class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ export default class App extends React.Component {
       <Router history={browserHistory}>
         <LazyLoad><Route path="/" component={Home} /></LazyLoad>
         <LazyLoad><Route path="chart-suite" component={ProjectOne} /></LazyLoad>
+        <LazyLoad><Route path="terminal-ui" component={ProjectTwo} /></LazyLoad>
         <LazyLoad><Route path="*" component={NoMatch}/></LazyLoad>
       </Router>
     )

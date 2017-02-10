@@ -49,7 +49,7 @@
   width: 30%;
   display: inline-block;
   // float: left;
-  float: right;
+  float: left;
   p {
     color: $lightgrey;
   }
@@ -67,6 +67,12 @@
 @media (max-width: 870px) {
   .projColRight {
     float: left;
+  }
+}
+
+@media (min-width: 1180px) {
+  .projColRight {
+    float: right;
   }
 }
 
@@ -324,4 +330,27 @@ div#Gallery img {
   display: inline-block;
   margin-right: 10px;
   cursor: crosshair;
+}
+
+// min-width: 701
+@media (max-height: 675px) {
+  .topText,
+  .projPic,
+  .tagsProjIndexSm,
+  .projColLeft p
+   {
+    display: none;
+  }
+  div#Gallery img {
+    width: 60px;
+    height: 60px;
+  }
+  .menuList {
+    top: 0px;
+    transform: none;
+    left: 10px;
+  }
+  .projSideNav .sideProjLink {
+    font-size: 12px;
+  }
 }
