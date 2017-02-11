@@ -12,64 +12,64 @@ import Gallery from 'react-photo-gallery';
 import ProjBgLink from '../img/bg.png';
 
 // Tech Icons
-import Wordpress from '../img/tech/wordpress.png';
+import Sass from '../img/tech/sass.png';
+import ReactJs from '../img/tech/react.png';
 import Javascript from '../img/tech/js.png';
-import Php from '../img/tech/php.png';
-import Css from '../img/tech/css.png';
-import Html from '../img/tech/html.png';
-import Litmus from '../img/tech/litmus.png';
+import NodeJs from '../img/tech/nodejs.png';
+import PostCss from '../img/tech/postcss.png';
+import Webpack from '../img/tech/webpack.png';
 import Sketch from '../img/tech/sketch.png';
 import Illustrator from '../img/tech/illustrator.png';
 import Photoshop from '../img/tech/photoshop.png';
 
 // Gallery Images
 
-import ProjThreePartOneA from '../img/pieces/project3-part1a.jpg';
-import ProjThreePartOneB from '../img/pieces/project3-part1b.jpg';
-import ProjThreePartOneC from '../img/pieces/project3-part1c.jpg';
-import ProjThreePartTwoA from '../img/pieces/project3-part2a.jpg';
-import ProjThreePartTwoB from '../img/pieces/project3-part2b.jpg';
-import ProjThreePartTwoC from '../img/pieces/project3-part2c.jpg';
-import ProjThreePartThreeA from '../img/pieces/project3-part4a.jpg';
-import ProjThreePartThreeB from '../img/pieces/project3-part4b.jpg';
-import ProjThreePartThreeC from '../img/pieces/project3-part4c.jpg';
-import ProjThreePartFourA from '../img/pieces/project3-part3a.jpg';
-import ProjThreePartFourB from '../img/pieces/project3-part3b.jpg';
-import ProjThreePartFourC from '../img/pieces/project3-part3c.jpg';
-import ProjThreePartFiveA from '../img/pieces/project3-part5a.jpg';
-import ProjThreePartFiveB from '../img/pieces/project3-part5b.jpg';
-import ProjThreePartFiveC from '../img/pieces/project3-part5c.jpg';
+import ProjFourPartOneA from '../img/pieces/project4-part1a.jpg';
+import ProjFourPartOneB from '../img/pieces/project4-part1b.jpg';
+import ProjFourPartOneC from '../img/pieces/project4-part1c.jpg';
+import ProjFourPartTwoA from '../img/pieces/project4-part2a.jpg';
+import ProjFourPartTwoB from '../img/pieces/project4-part2b.jpg';
+import ProjFourPartTwoC from '../img/pieces/project4-part2c.jpg';
+import ProjFourPartThreeA from '../img/pieces/project4-part4a.jpg';
+import ProjFourPartThreeB from '../img/pieces/project4-part4b.jpg';
+import ProjFourPartThreeC from '../img/pieces/project4-part4c.jpg';
+import ProjFourPartFourA from '../img/pieces/project4-part3a.jpg';
+import ProjFourPartFourB from '../img/pieces/project4-part3b.jpg';
+import ProjFourPartFourC from '../img/pieces/project4-part3c.jpg';
+import ProjFourPartFiveA from '../img/pieces/project4-part5a.jpg';
+import ProjFourPartFiveB from '../img/pieces/project4-part5b.jpg';
+import ProjFourPartFiveC from '../img/pieces/project4-part5c.jpg';
 
-import ProjPicLink from '../img/home/project-03.jpg';
+import ProjPicLink from '../img/home/project-04.jpg';
 const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
 const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
-const ProjThreePartOne = [
-  { src: ProjThreePartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneA, }},
-  { src: ProjThreePartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneB, }},
-  { src: ProjThreePartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneC, }},
+const ProjFourPartOne = [
+  { src: ProjFourPartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartOneA, }},
+  { src: ProjFourPartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartOneB, }},
+  { src: ProjFourPartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartOneC, }},
 ];
-const ProjThreePartTwo = [
-  { src: ProjThreePartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoA, }},
-  { src: ProjThreePartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoB, }},
-  { src: ProjThreePartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoC, }},
+const ProjFourPartTwo = [
+  { src: ProjFourPartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartTwoA, }},
+  { src: ProjFourPartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartTwoB, }},
+  { src: ProjFourPartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartTwoC, }},
 ];
-const ProjThreePartThree = [
-  { src: ProjThreePartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartThreeA, }},
-  { src: ProjThreePartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartThreeB, }},
-  { src: ProjThreePartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartThreeC, }},
+const ProjFourPartThree = [
+  { src: ProjFourPartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartThreeA, }},
+  { src: ProjFourPartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartThreeB, }},
+  { src: ProjFourPartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartThreeC, }},
 ];
-const ProjThreePartFour = [
-  { src: ProjThreePartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFourA, }},
-  { src: ProjThreePartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFourB, }},
-  { src: ProjThreePartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFourC, }},
+const ProjFourPartFour = [
+  { src: ProjFourPartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFourA, }},
+  { src: ProjFourPartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFourB, }},
+  { src: ProjFourPartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFourC, }},
 ];
-const ProjThreePartFive = [
-  { src: ProjThreePartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFiveA, }},
-  { src: ProjThreePartFiveB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFiveB, }},
-  { src: ProjThreePartFiveC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFiveC, }},
+const ProjFourPartFive = [
+  { src: ProjFourPartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFiveA, }},
+  { src: ProjFourPartFiveB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFiveB, }},
+  { src: ProjFourPartFiveC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFiveC, }},
 ];
 
-export default class ProjectThree extends React.Component {
+export default class ProjectFour extends React.Component {
 
   constructor(props) {
     super(props)
@@ -77,7 +77,7 @@ export default class ProjectThree extends React.Component {
       active: 0,
     };
 
-    document.title = "Homes From The Future";
+    document.title = "Odd Scenes";
     this.updateActiveState = this.updateActiveState.bind(this);
   }
 
@@ -118,9 +118,9 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer">
               <div className="projColLeft">
 
-                <h1>Homes From The Future</h1>
+                <h1>Odd Scenes</h1>
                 <div className="projPic" style={ProjPic}></div>
-                <p className="topText">Homes from the Future is an active tech blog dedicated to home automation and the internet of things. With a detailed product review page, and article page housed in a distinctly styled blog.</p>
+                <p className="topText">A unique layout media website, as a showcase and commerce hub for a digital illustration brand. The layout arranges elements to break a standard grid format, and showcase all the products & art pieces.</p>
 
                 <TopNav className="projIndexNav">
                   {navArr.map((n, idx) => {
@@ -137,12 +137,12 @@ export default class ProjectThree extends React.Component {
               </div>
               <div className="projColRight projColRightHome">
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tech</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">Wordpress, Javascript, PHP, CSS, HTML, Litmus, Sketch, Illustrator, Photoshop</p>
+                <p className="tagsProjIndex tagsProjIndexSm">Sass, React, Javascript, Node, PostCSS, Webpack, Sketch, Illustrator, Photoshop</p>
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">blog, tech, internet of things, home automation, news</p>
+                <p className="tagsProjIndex tagsProjIndexSm">digital art, illustration, shop, clothing, showcase</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://homesfromthefuture.com">
-                  <p className="tagsProjIndex">homesfromthefuture.com</p>
+                <Link to="http://justinbrazeau.com/oddscenes">
+                  <p className="tagsProjIndex">justinbrazeau.com/oddscenes</p>
                 </Link>
               </div>
             </div>
@@ -155,8 +155,8 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer projContainerTwo">
               <div className="projColLeft">
                 <h1>Concept</h1>
-                <p>The goal of the blog is to simplify these emerging fields and showcase in a clear and direct way the benefits of the products and services that exist. The process of building a “smart home” is one thats growing in popularity and potential, which was also one of the main reasons this blog was created.</p>
-                 <LazyLoad height={0}><Gallery photos={ProjThreePartOne} preloadNextImage={false} /></LazyLoad>
+                <p>Odd Scenes is a bold digital style and media company, and the main website needed to be a relevant showcase for this. It will need to house recent work, display high res images, optimized for efficient load times, and populate a shop section from work uploaded to an external shop page. The other main focus is to direct the user to other social media platforms for the brand.</p>
+                 <LazyLoad height={0}><Gallery photos={ProjFourPartOne} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -178,8 +178,8 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer projContainerThree">
               <div className="projColLeft">
                 <h1>Wireframes</h1>
-                <p>The main goal of the wireframes was to house many different media types and large amounts of text in an informative and clear way. The navigation elements are separated from the post content on layouts to aid with navigation. The iterations varied throughout the wireframing, mockups and even development process for this project, based on the best suited way to display product and article info.</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartTwo} preloadNextImage={false} /></LazyLoad>
+                <p>The first step of these wireframes was mapping out all the main layouts for the sections on the site. Knowing it will be a one page, scrolling website there was a couple iterations of the layout made, as well as some experimental external shop page templates. From there revisions were made and altered versions were made.</p>
+                <LazyLoad height={0}><Gallery photos={ProjFourPartTwo} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -200,8 +200,8 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer projContainerFour">
               <div className="projColLeft">
                 <h1>UI</h1>
-                <p>Interface elements use a modern and clean stylistic approach combining the brand style and wireframe layouts. Housing the content in boxes helped to use whitespace to separate elements, and the branding colours/styles helped to further this idea. Mobile layouts re-organize the sidebars to work below the content, and let the content be the main focus. This stage also involved a lot of refactoring to the product template (which later went through further revisions in the development stage).</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad>
+                <p>At this stage the decision of what artwork to add as the floating elements to the chosen layouts was made, as well as the best flow/layout to go with. The elements used the bright colours to pop out of the layout and give each section a distinct call to action. More of the text and flow was mapped out also in this stage, after incorporating the developed branding style.</p>
+                <LazyLoad height={0}><Gallery photos={ProjFourPartThree} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -222,8 +222,8 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer projContainerFive">
               <div className="projColLeft">
                 <h1>Branding</h1>
-                <p>The branding imagery and style for this project was based on technology and connectedness, as this is displayed prominently in the logo especially. The button and element styling uses playful colours and clean text to also make the topic of “home automation” seem inviting and fun rather than overwhelming. The header typography uses a monospace font to mimic a typewriter style, to add some extra originality to the overall layouts.</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad>
+                <p>The brand itself is built on style incorporating abstracted shapes, bright colours and sometimes using different media/technology to make its pieces. The logo plays on this with a chaotic layout of some basic shapes, the same way the illustration elements are made. The colours and shapes use a bold turquoise and purple combination that were initially being used years ago as its colours, with more accents and shading being added to the palette.</p>
+                <LazyLoad height={0}><Gallery photos={ProjFourPartFour} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -244,8 +244,8 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer projContainerSix">
               <div className="projColLeft">
                 <h1>Features</h1>
-                <p>Post page features bold and enlarged media elements, that behave well between screen sizes. The menu contains a modal with many features for navigation through the website, with all elements being enlarged on most screen sizes to optimize the interactivity. Contains a separated post template to highlight features of the product, and article template which is better suited for longer text articles about guides and concepts.</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartFive} preloadNextImage={false} /></LazyLoad>
+                <p>High quality images optimized and compressed to load fast and display well. Responsive behaviour of unique style grids flows well into smaller screens. Shop page, modal loads up a menu with information and a bold direct link to product.</p>
+                <LazyLoad height={0}><Gallery photos={ProjFourPartFive} preloadNextImage={false} /></LazyLoad>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>
@@ -266,24 +266,24 @@ export default class ProjectThree extends React.Component {
             <div className="projContainer projContainerSeven">
               <div className="projColLeft">
                 <h1>Tech</h1>
-                <p>Build on wordpress, with a custom theme built into it from scratch. The theme uses some custom plugins for post management, and some pre built plugins for Mailchimp, analytics, and content management. Images are optimized for speed and styling is written with vanilla CSS, using some features from BEM methodology, and well structured content organization in the theme style files. Theme functionality also has many customized elements using PHP for content, layout, and data organization.</p>
+                <p>A lightweight nodeJS app built with Sass and ReactJS as its main front end tools. Using a fairly basic setup with some PostCSS plugins for extra layout design and automation. Modules build into an optimized, minified single page application with a modified webpack setup. Some extra NPM packages also used as a basis for modals, and other ui elements.</p>
 
                 <ReactTooltip />
 
-                <img src={Wordpress} className="techIcon" data-tip="Wordpress" data-effect="solid"/>
+                <img src={Sass} className="techIcon" data-tip="Sass" data-effect="solid"/>
+                <img src={ReactJs} className="techIcon" data-tip="React" data-effect="solid"/>
                 <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
-                <img src={Php} className="techIcon" data-tip="PHP" data-effect="solid"/>
-                <img src={Html} className="techIcon" data-tip="HTML" data-effect="solid"/>
-                <img src={Css} className="techIcon" data-tip="CSS" data-effect="solid"/>
-                <img src={Litmus} className="techIcon" data-tip="Litmus" data-effect="solid"/>
+                <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
+                <img src={PostCss} className="techIcon" data-tip="PostCSS" data-effect="solid"/>
+                <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
                 <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
                 <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
                 <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/>
 
                 <br />
                 <h3>projects</h3>
-                <Link to="terminal-ui" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
-                <Link to="odd-scenes" className="errorLink"><button className="hvr-pulse projIndexBtn">NEXT &gt;&gt;</button></Link>
+                <Link to="homes-from-the-future" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
+                <Link to="walltagged" className="errorLink"><button className="hvr-pulse projIndexBtn">NEXT &gt;&gt;</button></Link>
               </div>
               <div className="projColRight">
                 <h3 className="projRightHeader">Contents</h3>

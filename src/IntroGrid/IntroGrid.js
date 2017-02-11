@@ -9,12 +9,12 @@ import LogoThree from '../img/logos/logo-projects-03.svg';
 import LogoFour from '../img/logos/logo-projects-04.svg';
 import LogoFive from '../img/logos/logo-projects-06.svg';
 import LogoSix from '../img/logos/logo-projects-05.svg';
-import ProjectOnePath from '../img/uncompressed/project-01.jpg';
-import ProjectTwoPath from '../img/uncompressed/project-02.jpg';
-import ProjectThreePath from '../img/uncompressed/project-03.jpg';
-import ProjectFourPath from '../img/uncompressed/project-04.jpg';
-import ProjectFivePath from '../img/uncompressed/project-05.jpg';
-import ProjectSixPath from '../img/uncompressed/project-06.jpg';
+import ProjectOnePath from '../img/home/project-01.jpg';
+import ProjectTwoPath from '../img/home/project-02.jpg';
+import ProjectThreePath from '../img/home/project-03.jpg';
+import ProjectFourPath from '../img/home/project-04.jpg';
+import ProjectFivePath from '../img/home/project-05.jpg';
+import ProjectSixPath from '../img/home/project-06.jpg';
 const ProjectOne = {backgroundImage: 'url(' + ProjectOnePath + ')'}
 const ProjectTwo = {backgroundImage: 'url(' + ProjectTwoPath + ')'}
 const ProjectThree = {backgroundImage: 'url(' + ProjectThreePath + ')'}
