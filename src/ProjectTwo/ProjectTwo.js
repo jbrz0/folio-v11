@@ -141,8 +141,8 @@ export default class ProjectTwo extends React.Component {
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
                 <p className="tagsProjIndex tagsProjIndexSm">terminal, scifi, ui kit, library, components</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://justinbrazeau.com/terminal-ui">
-                  <p className="tagsProjIndex">justinbrazeau.com/terminal-ui</p>
+                <Link to="http://terminalui.info">
+                  <p className="tagsProjIndex">terminalui.info</p>
                 </Link>
               </div>
             </div>
