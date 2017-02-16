@@ -21,7 +21,7 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'react-hot-loader/patch',
+		// 'react-hot-loader/patch',
 		'./src/index.jsx', // your app's entry point
 		'./styles/index.scss'
 	],
