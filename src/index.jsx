@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+// import { AppContainer } from 'react-hot-loader';
 // import { Router, Route, Link, browserHistory } from 'react-router';
 
 import App from './app.jsx'
@@ -14,15 +14,14 @@ injectTapEventPlugin();
 
 
 render(<App />, document.getElementById('app'));
-
-if (module && module.hot) {
-  module.hot.accept('./home.jsx', () => {
-    // const AppInner = require('./Home/Home.js').default;
-    render(
-      <AppContainer>
-        <App/>
-      </AppContainer>,
-      document.querySelector("#app")
-    );
-  });
-}
+//
+// if (module && module.hot) {
+//   module.hot.accept('./home.jsx', () => {
+//     render(
+//       <AppContainer>
+//         <App/>
+//       </AppContainer>,
+//       document.querySelector("#app")
+//     );
+//   });
+// }
