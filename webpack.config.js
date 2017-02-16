@@ -25,7 +25,7 @@ module.exports = {
 		'./src/index.jsx', // your app's entry point
 		'./styles/index.scss'
 	],
-	devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
+	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
 		publicPath: '/',
 		path: path.join(__dirname, 'public'),
