@@ -10,6 +10,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HOST = process.env.HOST || "138.197.93.234";
 const PORT = process.env.PORT || "5000";
 
+// const HOST = process.env.HOST || "localhost";
+// const PORT = process.env.PORT || "8888";
+
 loaders.push({
 	test: /\.scss$/,
 	loader: ExtractTextPlugin.extract('style', 'css?sourceMap&localIdentName=[local]___[hash:base64:5]!sass?outputStyle=expanded'),
