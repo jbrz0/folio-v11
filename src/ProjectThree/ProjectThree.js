@@ -141,9 +141,9 @@ export default class ProjectThree extends React.Component {
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
                 <p className="tagsProjIndex tagsProjIndexSm">blog, tech, internet of things, home automation, news</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://homesfromthefuture.com">
+                <a href="http://homesfromthefuture.com">
                   <p className="tagsProjIndex">homesfromthefuture.com</p>
-                </Link>
+                </a>
               </div>
             </div>
           </Slide>

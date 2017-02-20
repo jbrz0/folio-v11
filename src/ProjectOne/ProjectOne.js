@@ -142,9 +142,9 @@ export default class ProjectOne extends React.Component {
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
                 <p className="tagsProjIndex tagsProjIndexSm">charts, interaction, webapp, UI, presentation, live updates</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://chartsuite.us">
+                <a href="http://chartsuite.us">
                   <p className="tagsProjIndex">chartsuite.us</p>
-                </Link>
+                </a>
               </div>
             </div>
           </Slide>

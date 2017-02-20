@@ -141,9 +141,9 @@ export default class ProjectFive extends React.Component {
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
                 <p className="tagsProjIndex tagsProjIndexSm">canvas, art, tools, drawing, graffiti</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://walltagged.us">
+                <a href="http://walltagged.us">
                   <p className="tagsProjIndex">walltagged.us</p>
-                </Link>
+                </a>
               </div>
             </div>
           </Slide>

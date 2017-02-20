@@ -141,9 +141,9 @@ export default class ProjectFour extends React.Component {
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
                 <p className="tagsProjIndex tagsProjIndexSm">digital art, illustration, shop, clothing, showcase</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://oddescenes.us">
+                <a href="http://oddescenes.us">
                   <p className="tagsProjIndex">oddescenes.us</p>
-                </Link>
+                </a>
               </div>
             </div>
           </Slide>

@@ -139,9 +139,9 @@ export default class ProjectSix extends React.Component {
                 <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
                 <p className="tagsProjIndex tagsProjIndexSm">iOS, styling, UI Kit, Phone, Mobile</p>
                 <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <Link to="http://github.com/brz0/gold-tooth">
+                <a href="http://github.com/brz0/gold-tooth">
                   <p className="tagsProjIndex">github.com/brz0/gold-tooth</p>
-                </Link>
+                </a>
               </div>
             </div>
           </Slide>
