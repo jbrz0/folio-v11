@@ -23,49 +23,35 @@ import Illustrator from '../img/tech/illustrator.png';
 
 // Gallery Images
 
-import ProjTwoPartOneA from '../img/pieces/project2-part1a.jpg';
-import ProjTwoPartOneB from '../img/pieces/project2-part1b.jpg';
-import ProjTwoPartOneC from '../img/pieces/project2-part1c.jpg';
-import ProjTwoPartTwoA from '../img/pieces/project2-part2a.jpg';
-import ProjTwoPartTwoB from '../img/pieces/project2-part2b.jpg';
-import ProjTwoPartTwoC from '../img/pieces/project2-part2c.jpg';
-import ProjTwoPartThreeA from '../img/pieces/project2-part4a.jpg';
-import ProjTwoPartThreeB from '../img/pieces/project2-part4b.jpg';
-import ProjTwoPartThreeC from '../img/pieces/project2-part4c.jpg';
-import ProjTwoPartFourA from '../img/pieces/project2-part3a.jpg';
-import ProjTwoPartFourB from '../img/pieces/project2-part3b.jpg';
-import ProjTwoPartFourC from '../img/pieces/project2-part3c.jpg';
-import ProjTwoPartFiveA from '../img/pieces/project2-part5a.jpg';
-import ProjTwoPartFiveB from '../img/pieces/project2-part5b.jpg';
-import ProjTwoPartFiveC from '../img/pieces/project2-part5c.jpg';
+const ProjTwoPartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/55b27e49066719.58aa70dc15048.jpg';
+const ProjTwoPartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/ccddaa49066719.58aa70dc15c6c.jpg';
+const ProjTwoPartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/4d615a49066719.58aa70dc14cb0.jpg';
+const ProjTwoPartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/57460b49066719.58aa70dc161e5.jpg';
+const ProjTwoPartThreeB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/09ca0b49066719.58aa7a328bac4.png';
+const ProjTwoPartFourA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/47469649066719.58aa70dc158cd.jpg';
+const ProjTwoPartFiveA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/e4eed549066719.58aa7a328b2a1.png';
+const ProjTwoPartFiveB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2468b549066719.58aa7c587985b.png';
 
 import ProjPicLink from '../img/home/project-02.jpg';
 const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
 const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
 const ProjTwoPartOne = [
   { src: ProjTwoPartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartOneA, }},
-  { src: ProjTwoPartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartOneB, }},
-  { src: ProjTwoPartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartOneC, }},
 ];
 const ProjTwoPartTwo = [
   { src: ProjTwoPartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartTwoA, }},
   { src: ProjTwoPartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartTwoB, }},
-  { src: ProjTwoPartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartTwoC, }},
 ];
 const ProjTwoPartThree = [
   { src: ProjTwoPartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartThreeA, }},
   { src: ProjTwoPartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartThreeB, }},
-  { src: ProjTwoPartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartThreeC, }},
 ];
 const ProjTwoPartFour = [
   { src: ProjTwoPartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartFourA, }},
-  { src: ProjTwoPartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartFourB, }},
-  { src: ProjTwoPartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartFourC, }},
 ];
 const ProjTwoPartFive = [
   { src: ProjTwoPartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartFiveA, }},
   { src: ProjTwoPartFiveB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartFiveB, }},
-  { src: ProjTwoPartFiveC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjTwoPartFiveC, }},
 ];
 
 export default class ProjectTwo extends React.Component {

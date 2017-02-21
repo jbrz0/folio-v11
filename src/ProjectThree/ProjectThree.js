@@ -24,49 +24,35 @@ import Photoshop from '../img/tech/photoshop.png';
 
 // Gallery Images
 
-import ProjThreePartOneA from '../img/pieces/project3-part1a.jpg';
-import ProjThreePartOneB from '../img/pieces/project3-part1b.jpg';
-import ProjThreePartOneC from '../img/pieces/project3-part1c.jpg';
-import ProjThreePartTwoA from '../img/pieces/project3-part2a.jpg';
-import ProjThreePartTwoB from '../img/pieces/project3-part2b.jpg';
-import ProjThreePartTwoC from '../img/pieces/project3-part2c.jpg';
-import ProjThreePartThreeA from '../img/pieces/project3-part4a.jpg';
-import ProjThreePartThreeB from '../img/pieces/project3-part4b.jpg';
-import ProjThreePartThreeC from '../img/pieces/project3-part4c.jpg';
-import ProjThreePartFourA from '../img/pieces/project3-part3a.jpg';
-import ProjThreePartFourB from '../img/pieces/project3-part3b.jpg';
-import ProjThreePartFourC from '../img/pieces/project3-part3c.jpg';
-import ProjThreePartFiveA from '../img/pieces/project3-part5a.jpg';
-import ProjThreePartFiveB from '../img/pieces/project3-part5b.jpg';
-import ProjThreePartFiveC from '../img/pieces/project3-part5c.jpg';
+const ProjThreePartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/cd294149069065.58aab473c29ca.jpg';
+const ProjThreePartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/80f2a849069065.58aac958a9088.jpg';
+const ProjThreePartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/26b85d49069065.58aab473c1e26.jpg';
+const ProjThreePartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/63205a49069065.58aabb32af44d.jpg';
+const ProjThreePartFourA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/821f5549069065.58aabb32b0604.jpg';
+const ProjThreePartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/0d7cde49069065.58aabb32afd59.png';
+const ProjThreePartFiveA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/630c5249069065.58aac5b31fcc3.png';
+const ProjThreePartFiveB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/266e8449069065.58aac5b3283aa.png';
 
 import ProjPicLink from '../img/home/project-03.jpg';
 const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
 const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
 const ProjThreePartOne = [
   { src: ProjThreePartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneA, }},
-  { src: ProjThreePartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneB, }},
-  { src: ProjThreePartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneC, }},
 ];
 const ProjThreePartTwo = [
   { src: ProjThreePartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoA, }},
   { src: ProjThreePartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoB, }},
-  { src: ProjThreePartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoC, }},
 ];
 const ProjThreePartThree = [
   { src: ProjThreePartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartThreeA, }},
-  { src: ProjThreePartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartThreeB, }},
-  { src: ProjThreePartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartThreeC, }},
 ];
 const ProjThreePartFour = [
   { src: ProjThreePartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFourA, }},
   { src: ProjThreePartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFourB, }},
-  { src: ProjThreePartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFourC, }},
 ];
 const ProjThreePartFive = [
   { src: ProjThreePartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFiveA, }},
   { src: ProjThreePartFiveB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFiveB, }},
-  { src: ProjThreePartFiveC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartFiveC, }},
 ];
 
 export default class ProjectThree extends React.Component {

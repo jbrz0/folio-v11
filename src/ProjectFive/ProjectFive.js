@@ -24,49 +24,35 @@ import Photoshop from '../img/tech/photoshop.png';
 
 // Gallery Images
 
-import ProjFivePartOneA from '../img/pieces/project5-part1a.jpg';
-import ProjFivePartOneB from '../img/pieces/project5-part1b.jpg';
-import ProjFivePartOneC from '../img/pieces/project5-part1c.jpg';
-import ProjFivePartTwoA from '../img/pieces/project5-part2a.jpg';
-import ProjFivePartTwoB from '../img/pieces/project5-part2b.jpg';
-import ProjFivePartTwoC from '../img/pieces/project5-part2c.jpg';
-import ProjFivePartThreeA from '../img/pieces/project5-part4a.jpg';
-import ProjFivePartThreeB from '../img/pieces/project5-part4b.jpg';
-import ProjFivePartThreeC from '../img/pieces/project5-part4c.jpg';
-import ProjFivePartFourA from '../img/pieces/project5-part3a.jpg';
-import ProjFivePartFourB from '../img/pieces/project5-part3b.jpg';
-import ProjFivePartFourC from '../img/pieces/project5-part3c.jpg';
-import ProjFivePartFiveA from '../img/pieces/project5-part5a.jpg';
-import ProjFivePartFiveB from '../img/pieces/project5-part5b.jpg';
-import ProjFivePartFiveC from '../img/pieces/project5-part5c.jpg';
+const ProjFivePartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/7972e449087263.58ab220fb23f0.jpg';
+const ProjFivePartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2f985649087263.58ababab85d84.jpg';
+const ProjFivePartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/05ad0f49087263.58ab220fb2924.jpg';
+const ProjFivePartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/00d3fb49087263.58ab220fb164a.jpg';
+const ProjFivePartFourA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/afe0f949087263.58aba04fba5ec.jpg';
+const ProjFivePartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/69d67649087263.58aba04fb9e1f.png';
+import ProjFivePartFiveA from '../img/pieces/walltagged-7b.png';
+const ProjFivePartFiveB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/057eba49087263.58aba61019220.png';
 
 import ProjPicLink from '../img/home/project-05.jpg';
 const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
 const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
 const ProjFivePartOne = [
   { src: ProjFivePartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartOneA, }},
-  { src: ProjFivePartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartOneB, }},
-  { src: ProjFivePartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartOneC, }},
 ];
 const ProjFivePartTwo = [
   { src: ProjFivePartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartTwoA, }},
   { src: ProjFivePartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartTwoB, }},
-  { src: ProjFivePartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartTwoC, }},
 ];
 const ProjFivePartThree = [
   { src: ProjFivePartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartThreeA, }},
-  { src: ProjFivePartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartThreeB, }},
-  { src: ProjFivePartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartThreeC, }},
 ];
 const ProjFivePartFour = [
   { src: ProjFivePartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartFourA, }},
   { src: ProjFivePartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartFourB, }},
-  { src: ProjFivePartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartFourC, }},
 ];
 const ProjFivePartFive = [
   { src: ProjFivePartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartFiveA, }},
   { src: ProjFivePartFiveB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartFiveB, }},
-  { src: ProjFivePartFiveC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartFiveC, }},
 ];
 
 export default class ProjectFive extends React.Component {

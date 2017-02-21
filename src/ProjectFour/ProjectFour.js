@@ -24,44 +24,32 @@ import Photoshop from '../img/tech/photoshop.png';
 
 // Gallery Images
 
-import ProjFourPartOneA from '../img/pieces/project4-part1a.jpg';
-import ProjFourPartOneB from '../img/pieces/project4-part1b.jpg';
-import ProjFourPartOneC from '../img/pieces/project4-part1c.jpg';
-import ProjFourPartTwoA from '../img/pieces/project4-part2a.jpg';
-import ProjFourPartTwoB from '../img/pieces/project4-part2b.jpg';
-import ProjFourPartTwoC from '../img/pieces/project4-part2c.jpg';
-import ProjFourPartThreeA from '../img/pieces/project4-part4a.jpg';
-import ProjFourPartThreeB from '../img/pieces/project4-part4b.jpg';
-import ProjFourPartThreeC from '../img/pieces/project4-part4c.jpg';
-import ProjFourPartFourA from '../img/pieces/project4-part3a.jpg';
-import ProjFourPartFourB from '../img/pieces/project4-part3b.jpg';
-import ProjFourPartFourC from '../img/pieces/project4-part3c.jpg';
-import ProjFourPartFiveA from '../img/pieces/project4-part5a.jpg';
-import ProjFourPartFiveB from '../img/pieces/project4-part5b.jpg';
-import ProjFourPartFiveC from '../img/pieces/project4-part5c.jpg';
+const ProjFourPartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/868b7b49078421.58aac827278b5.jpg';
+const ProjFourPartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/d0006e49078421.58aacc59a4c05.jpg';
+const ProjFourPartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/5382b649078421.58aace116eb49.jpg';
+const ProjFourPartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/c6b99849078421.58aaf155daa2f.png';
+const ProjFourPartFourA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/0bc07449078421.58aacc59a4369.jpg';
+const ProjFourPartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/4ecd1249078421.58aae876b84a7.png';
+const ProjFourPartFiveA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/71f6e049078421.58ab1274451f5.png';
+const ProjFourPartFiveB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/399d4d49078421.58aaf155da4a3.png';
+const ProjFourPartFiveC = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/4a0a7549078421.58ab12744f19a.png';
 
 import ProjPicLink from '../img/home/project-04.jpg';
 const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
 const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
 const ProjFourPartOne = [
   { src: ProjFourPartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartOneA, }},
-  { src: ProjFourPartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartOneB, }},
-  { src: ProjFourPartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartOneC, }},
 ];
 const ProjFourPartTwo = [
   { src: ProjFourPartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartTwoA, }},
   { src: ProjFourPartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartTwoB, }},
-  { src: ProjFourPartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartTwoC, }},
 ];
 const ProjFourPartThree = [
   { src: ProjFourPartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartThreeA, }},
-  { src: ProjFourPartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartThreeB, }},
-  { src: ProjFourPartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartThreeC, }},
 ];
 const ProjFourPartFour = [
   { src: ProjFourPartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFourA, }},
   { src: ProjFourPartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFourB, }},
-  { src: ProjFourPartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFourC, }},
 ];
 const ProjFourPartFive = [
   { src: ProjFourPartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFourPartFiveA, }},

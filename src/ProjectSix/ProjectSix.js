@@ -22,49 +22,35 @@ import Photoshop from '../img/tech/photoshop.png';
 
 // Gallery Images
 
-import ProjSixPartOneA from '../img/pieces/project6-part1a.jpg';
-import ProjSixPartOneB from '../img/pieces/project6-part1b.jpg';
-import ProjSixPartOneC from '../img/pieces/project6-part1c.jpg';
-import ProjSixPartTwoA from '../img/pieces/project6-part2a.jpg';
-import ProjSixPartTwoB from '../img/pieces/project6-part2b.jpg';
-import ProjSixPartTwoC from '../img/pieces/project6-part2c.jpg';
-import ProjSixPartThreeA from '../img/pieces/project6-part4a.jpg';
-import ProjSixPartThreeB from '../img/pieces/project6-part4b.jpg';
-import ProjSixPartThreeC from '../img/pieces/project6-part4c.jpg';
-import ProjSixPartFourA from '../img/pieces/project6-part3a.jpg';
-import ProjSixPartFourB from '../img/pieces/project6-part3b.jpg';
-import ProjSixPartFourC from '../img/pieces/project6-part3c.jpg';
-import ProjSixPartFiveA from '../img/pieces/project6-part5a.jpg';
-import ProjSixPartFiveB from '../img/pieces/project6-part5b.jpg';
-import ProjSixPartFiveC from '../img/pieces/project6-part5c.jpg';
+const ProjSixPartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/e71dec49117053.58abb3dfa3cbf.jpg';
+const ProjSixPartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/59147f49117053.58abb3dfa3139.jpg';
+const ProjSixPartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/1da4c449117053.58abb3dfa45b1.jpg';
+const ProjSixPartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/27a79849117053.58abb3dfa3967.jpg';
+const ProjSixPartFourA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/21f9cb49117053.58abb3dfa2a1b.jpg';
+const ProjSixPartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/af94f349117053.58abbf1b028eb.png';
+const ProjSixPartFiveA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/74738249117053.58abbf1b01c24.jpg';
+import ProjSixPartFiveB from '../img/pieces/gold-7.jpg';
 
 import ProjPicLink from '../img/home/project-06.jpg';
 const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
 const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
 const ProjSixPartOne = [
-  { src: ProjSixPartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartOneA, }},
-  { src: ProjSixPartOneB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartOneB, }},
-  { src: ProjSixPartOneC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartOneC, }},
+  { src: ProjSixPartOneA, width: 192, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartOneA, }},
 ];
 const ProjSixPartTwo = [
   { src: ProjSixPartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartTwoA, }},
   { src: ProjSixPartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartTwoB, }},
-  { src: ProjSixPartTwoC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartTwoC, }},
 ];
 const ProjSixPartThree = [
   { src: ProjSixPartThreeA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartThreeA, }},
-  { src: ProjSixPartThreeB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartThreeB, }},
-  { src: ProjSixPartThreeC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartThreeC, }},
 ];
 const ProjSixPartFour = [
   { src: ProjSixPartFourA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartFourA, }},
   { src: ProjSixPartFourB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartFourB, }},
-  { src: ProjSixPartFourC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartFourC, }},
 ];
 const ProjSixPartFive = [
   { src: ProjSixPartFiveA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartFiveA, }},
   { src: ProjSixPartFiveB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartFiveB, }},
-  { src: ProjSixPartFiveC, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartFiveC, }},
 ];
 
 export default class ProjectSix extends React.Component {
@@ -278,7 +264,7 @@ export default class ProjectSix extends React.Component {
 
                 <br />
                 <h3>projects</h3>
-                <Link to="homes-from-the-future" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
+                <Link to="walltagged" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
                 {/* <Link to="gold-tooth" className="errorLink"><button className="hvr-pulse projIndexBtn">NEXT &gt;&gt;</button></Link> */}
               </div>
               <div className="projColRight">
