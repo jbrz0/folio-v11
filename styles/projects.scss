@@ -362,3 +362,9 @@ div#Gallery img {
     font-size: 12px;
   }
 }
+
+@media (max-width: 600px) {
+  .projColLeft p {
+    display: none !important;
+  }
+}
