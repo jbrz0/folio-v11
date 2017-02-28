@@ -367,4 +367,11 @@ div#Gallery img {
   .projColLeft p {
     display: none !important;
   }
+  .projContainer {
+    padding-top: 30vh;
+    position: static;
+    top: auto !important;
+    left: auto !important;
+    transform: none;
+  }
 }
