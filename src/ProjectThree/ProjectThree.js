@@ -1,15 +1,27 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
-import {Link} from 'react-router';
 import ReactTooltip from 'react-tooltip';
+import Gallery from 'react-photo-gallery';
 import LazyLoad from 'react-lazyload';
 var Scroll  = require('react-scroll');
+var Link = Scroll.Link;
 var Element    = Scroll.Element;
-const {Fullpage, Slide, TopNav} = require('fullpage-react');
-import Gallery from 'react-photo-gallery';
-
-// Bg Top Image
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 import ProjBgLink from '../img/bg.png';
+
+import ProjLogo from '../img/logos/logo-projects-03.svg';
+import ProjBgHeaderPath from '../img/project-header/projbg3.jpg';
+const ProjBgHeader = {backgroundImage: 'url(' + ProjBgHeaderPath + ')'};
+
+// Pagination
+import PaginationLogoPrev from '../img/logos/logo-projects-02.svg';
+import PaginationImgPrevPath from '../img/home/project-02.jpg';
+const PaginationImgPrev = {backgroundImage: 'url(' + PaginationImgPrevPath + ')'};
+import PaginationLogoNext from '../img/logos/logo-projects-04.svg';
+import PaginationImgNextPath from '../img/home/project-04.jpg';
+const PaginationImgNext = {backgroundImage: 'url(' + PaginationImgNextPath + ')'};
 
 // Tech Icons
 import Wordpress from '../img/tech/wordpress.png';
@@ -21,10 +33,6 @@ import Litmus from '../img/tech/litmus.png';
 import Sketch from '../img/tech/sketch.png';
 import Illustrator from '../img/tech/illustrator.png';
 import Photoshop from '../img/tech/photoshop.png';
-
-// Gallery Images
-
-const ProjThreePartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/cd294149069065.58aab473c29ca.jpg';
 const ProjThreePartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/80f2a849069065.58aac958a9088.jpg';
 const ProjThreePartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/26b85d49069065.58aab473c1e26.jpg';
 const ProjThreePartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/63205a49069065.58aabb32af44d.jpg';
@@ -33,12 +41,6 @@ const ProjThreePartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs
 const ProjThreePartFiveA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/630c5249069065.58aac5b31fcc3.png';
 const ProjThreePartFiveB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/266e8449069065.58aac5b3283aa.png';
 
-import ProjPicLink from '../img/home/project-03.jpg';
-const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
-const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
-const ProjThreePartOne = [
-  { src: ProjThreePartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartOneA, }},
-];
 const ProjThreePartTwo = [
   { src: ProjThreePartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoA, }},
   { src: ProjThreePartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjThreePartTwoB, }},
@@ -59,239 +61,130 @@ export default class ProjectThree extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      active: 0,
-    };
-
     document.title = "Homes From The Future";
-    this.updateActiveState = this.updateActiveState.bind(this);
+    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center center';
   }
-
-  updateActiveState(newActive) {
-    this.setState({'active': newActive});
+  componentDidMount() {
+    scrollSpy.update();
   }
-
-  shouldComponentUpdate(nP, nS) {
-    return nS.active !== this.state.active;
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
-
-  onMouseOver(idx) {
-    this.setState({'hover': idx});
+  componentWillMount() {
+    scroll.scrollToTop();
   }
-
-  onMouseOut() {
-    this.setState({'hover': null});
+  scrollToTop() {
+    scroll.scrollToTop();
   }
-
-  compareStyles(component, idx) {
-    return idx === this.state.active ? component.activeStyles : idx === this.state.hover ? component.hoverStyles : component.nonActiveStyles
+  scrollToBottom() {
+    scroll.scrollToBottom();
+  }
+  scrollTo() {
+    scroll.scrollTo(100);
+  }
+  scrollMore() {
+    scroll.scrollMore(100);
+  }
+  handleSetActive(to) {
+    console.log(to);
   }
 
   render() {
-    let navCount = 3;
-    let navArr = [];
-    for (let i = 0; i < navCount; i++) {
-      navArr.push(i);
-    }
+
     return (
       <div>
         <Nav />
 
-        <Fullpage active={this.updateActiveState}>
+        <div className="projectIntro">
+          <div style={ProjBgHeader} className="projectIntroBanner">
 
-          <Slide className="projSlideOne" style={ProjBg}>
+            <div className="projTextWrap projTextWrapTop">
+              <div className="projIntroTop">
 
-            <div className="projContainer">
-              <div className="projColLeft">
+                <div className="projIntroLinksWrap">
+                  <img src={ProjLogo} className="projectLogo"/>
 
-                <h1>Homes From The Future</h1>
-                <div className="projPic" style={ProjPic}></div>
-                <p className="topText">Homes from the Future is an active tech blog dedicated to home automation and the internet of things. With a detailed product review page, and article page housed in a distinctly styled blog.</p>
+                  <a href="http://homesfromthefuture.com" className="projIntroLinks projIntroLinkOne">
+                    <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
+                  </a>
+                  <a href="https://github.com/brz0/hftf-wp" className="projIntroLinks projIntroLinkTwo">
+                    <i className="ion-social-github-outline"></i>&nbsp;&nbsp;github
+                  </a>
+                  <a href="https://www.behance.net/gallery/49069065/Homes-From-The-Future" className="projIntroLinks projIntroLinkThree">
+                    <i className="ion-social-github-outline"></i>&nbsp;&nbsp;behance
+                  </a>
+                </div>
 
-                <TopNav className="projIndexNav">
-                  {navArr.map((n, idx) => {
-                  return <span key={idx} ref={n}></span>
-                  }, this)}
-                  <Link key={1} ref={1} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexOne">CONCEPT/UX</button></Link>
-                  <Link key={2} ref={2} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexTwo">WIREFRAMES</button></Link>
-                  <Link key={3} ref={3} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexThree projIndexBreak">UI</button></Link>
-                  <Link key={4} ref={4} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexFour">BRANDING</button></Link>
-                  <Link key={5} ref={5} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexFive">FEATURES</button></Link>
-                  <Link key={6} ref={6} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexSix">TECH</button></Link>
+                <p className="projTextIntro">Homes from the Future is an active tech blog dedicated to home automation and the internet of things. With a detailed product review page, and article page housed in a distinctly styled blog.</p>
+                <span className="projTags">blog, tech, internet of things, home automation, news</span>
 
-                </TopNav>
-              </div>
-              <div className="projColRight projColRightHome">
-                <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tech</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">Wordpress, Javascript, PHP, CSS, HTML, Litmus, Sketch, Illustrator, Photoshop</p>
-                <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">blog, tech, internet of things, home automation, news</p>
-                <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <a href="http://homesfromthefuture.com">
-                  <p className="tagsProjIndex">homesfromthefuture.com</p>
-                </a>
+                <Link activeClass="active" to="projects" spy={true}
+                  smooth={true} offset={-42} duration={500} onSetActive={this.handleSetActive}>
+                  <button className="homeBtn hvr-pulse projViewBtn">
+                    <i className="ion-ios-bolt-outline"></i>&nbsp;&nbsp;VIEW PROJECT
+                  </button>
+                </Link>
+
               </div>
             </div>
-          </Slide>
 
+          </div>
 
-          <Slide className="projSlideTwo">
+        </div>
+
+          <div className="projTextWrap projTextWrapBody">
             <Element name="projects"></Element>
 
-            <div className="projContainer projContainerTwo">
-              <div className="projColLeft">
-                <h1>Concept</h1>
-                <p>The goal of the blog is to simplify these emerging fields and showcase in a clear and direct way the benefits of the products and services that exist. The process of building a “smart home” is one thats growing in popularity and potential, which was also one of the main reasons this blog was created.</p>
-                 <LazyLoad height={0}><Gallery photos={ProjThreePartOne} preloadNextImage={false} /></LazyLoad>
+            <h2 className="projHeaderTxt">Wireframes</h2>
+            <p className="projDesc">The main goal of the wireframes was to house many different media types and large amounts of text in an informative and clear way. The navigation elements are separated from the post content on layouts to aid with navigation. The iterations varied throughout the wireframing, mockups and even development process for this project, based on the best suited way to display product and article info.</p>
+            <LazyLoad height={0}><Gallery photos={ProjThreePartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">UI</h2>
+            <p className="projDesc">Interface elements use a modern and clean stylistic approach combining the brand style and wireframe layouts. Housing the content in boxes helped to use whitespace to separate elements, and the branding colours/styles helped to further this idea. Mobile layouts re-organize the sidebars to work below the content, and let the content be the main focus. This stage also involved a lot of refactoring to the product template (which later went through further revisions in the development stage).</p>
+            <LazyLoad height={0}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Branding</h2>
+            <p className="projDesc">The branding imagery and style for this project was based on technology and connectedness, as this is displayed prominently in the logo especially. The button and element styling uses playful colours and clean text to also make the topic of “home automation” seem inviting and fun rather than overwhelming. The header typography uses a monospace font to mimic a typewriter style, to add some extra originality to the overall layouts.</p>
+            <LazyLoad height={0}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Features</h2>
+            <p className="projDesc">Post page features bold and enlarged media elements, that behave well between screen sizes. The menu contains a modal with many features for navigation through the website, with all elements being enlarged on most screen sizes to optimize the interactivity. Contains a separated post template to highlight features of the product, and article template which is better suited for longer text articles about guides and concepts.</p>
+            <LazyLoad height={0}><Gallery photos={ProjThreePartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Tech</h2>
+            <p className="projDesc">Build on wordpress, with a custom theme built into it from scratch. The theme uses some custom plugins for post management, and some pre built plugins for Mailchimp, analytics, and content management. Images are optimized for speed and styling is written with vanilla CSS, using some features from BEM methodology, and well structured content organization in the theme style files. Theme functionality also has many customized elements using PHP for content, layout, and data organization.</p>
+
+            <ReactTooltip />
+
+            <img src={Wordpress} className="techIcon" data-tip="Wordpress" data-effect="solid"/>
+            <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
+            <img src={Php} className="techIcon" data-tip="PHP" data-effect="solid"/>
+            <img src={Html} className="techIcon" data-tip="HTML" data-effect="solid"/>
+            <img src={Css} className="techIcon" data-tip="CSS" data-effect="solid"/>
+            <img src={Litmus} className="techIcon" data-tip="Litmus" data-effect="solid"/>
+            <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
+            <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
+            <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/><br />
+
+            <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
+            <a href="terminal-ui" className="paginationLinkWrap">
+              <div style={PaginationImgPrev} className="projPagination">
+                <img src={PaginationLogoPrev} className="projPaginationLogo terminalPagination" />
               </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink sideProjActive">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
+            </a>
+            <a href="odd-scenes" className="paginationLinkWrap">
+            <div style={PaginationImgNext} className="projPagination">
+              <img src={PaginationLogoNext} className="projPaginationLogo" />
             </div>
+            </a>
 
-          </Slide>
-          <Slide className="projSlideThree">
-            <div className="projContainer projContainerThree">
-              <div className="projColLeft">
-                <h1>Wireframes</h1>
-                <p>The main goal of the wireframes was to house many different media types and large amounts of text in an informative and clear way. The navigation elements are separated from the post content on layouts to aid with navigation. The iterations varied throughout the wireframing, mockups and even development process for this project, based on the best suited way to display product and article info.</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartTwo} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink sideProjActive">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideFour">
-            <div className="projContainer projContainerFour">
-              <div className="projColLeft">
-                <h1>UI</h1>
-                <p>Interface elements use a modern and clean stylistic approach combining the brand style and wireframe layouts. Housing the content in boxes helped to use whitespace to separate elements, and the branding colours/styles helped to further this idea. Mobile layouts re-organize the sidebars to work below the content, and let the content be the main focus. This stage also involved a lot of refactoring to the product template (which later went through further revisions in the development stage).</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink sideProjActive">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideFive">
-            <div className="projContainer projContainerFive">
-              <div className="projColLeft">
-                <h1>Branding</h1>
-                <p>The branding imagery and style for this project was based on technology and connectedness, as this is displayed prominently in the logo especially. The button and element styling uses playful colours and clean text to also make the topic of “home automation” seem inviting and fun rather than overwhelming. The header typography uses a monospace font to mimic a typewriter style, to add some extra originality to the overall layouts.</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink sideProjActive">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideSix">
-            <div className="projContainer projContainerSix">
-              <div className="projColLeft">
-                <h1>Features</h1>
-                <p>Post page features bold and enlarged media elements, that behave well between screen sizes. The menu contains a modal with many features for navigation through the website, with all elements being enlarged on most screen sizes to optimize the interactivity. Contains a separated post template to highlight features of the product, and article template which is better suited for longer text articles about guides and concepts.</p>
-                <LazyLoad height={0}><Gallery photos={ProjThreePartFive} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink sideProjActive">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideSeven">
-            <div className="projContainer projContainerSeven">
-              <div className="projColLeft">
-                <h1>Tech</h1>
-                <p>Build on wordpress, with a custom theme built into it from scratch. The theme uses some custom plugins for post management, and some pre built plugins for Mailchimp, analytics, and content management. Images are optimized for speed and styling is written with vanilla CSS, using some features from BEM methodology, and well structured content organization in the theme style files. Theme functionality also has many customized elements using PHP for content, layout, and data organization.</p>
+          </div>
+        </div>
 
-                <ReactTooltip />
-
-                <img src={Wordpress} className="techIcon" data-tip="Wordpress" data-effect="solid"/>
-                <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
-                <img src={Php} className="techIcon" data-tip="PHP" data-effect="solid"/>
-                <img src={Html} className="techIcon" data-tip="HTML" data-effect="solid"/>
-                <img src={Css} className="techIcon" data-tip="CSS" data-effect="solid"/>
-                <img src={Litmus} className="techIcon" data-tip="Litmus" data-effect="solid"/>
-                <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
-                <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
-                <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/>
-
-                <br />
-                <h3>projects</h3>
-                <Link to="terminal-ui" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
-                <Link to="odd-scenes" className="errorLink"><button className="hvr-pulse projIndexBtn">NEXT &gt;&gt;</button></Link>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink sideProjActive">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-
-
-
-        </Fullpage>
-
-      </div>
     )
   }
 }

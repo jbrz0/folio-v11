@@ -1,15 +1,27 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
-import {Link} from 'react-router';
 import ReactTooltip from 'react-tooltip';
+import Gallery from 'react-photo-gallery';
 import LazyLoad from 'react-lazyload';
 var Scroll  = require('react-scroll');
+var Link = Scroll.Link;
 var Element    = Scroll.Element;
-const {Fullpage, Slide, TopNav} = require('fullpage-react');
-import Gallery from 'react-photo-gallery';
-
-// Bg Top Image
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 import ProjBgLink from '../img/bg.png';
+
+import ProjLogo from '../img/logos/logo-projects-06.svg';
+import ProjBgHeaderPath from '../img/project-header/projbg5.jpg';
+const ProjBgHeader = {backgroundImage: 'url(' + ProjBgHeaderPath + ')'};
+
+// Pagination
+import PaginationLogoPrev from '../img/logos/logo-projects-04.svg';
+import PaginationImgPrevPath from '../img/home/project-04.jpg';
+const PaginationImgPrev = {backgroundImage: 'url(' + PaginationImgPrevPath + ')'};
+import PaginationLogoNext from '../img/logos/logo-projects-05.svg';
+import PaginationImgNextPath from '../img/home/project-06.jpg';
+const PaginationImgNext = {backgroundImage: 'url(' + PaginationImgNextPath + ')'};
 
 // Tech Icons
 import Sass from '../img/tech/sass.png';
@@ -21,9 +33,6 @@ import Webpack from '../img/tech/webpack.png';
 import Sketch from '../img/tech/sketch.png';
 import Illustrator from '../img/tech/illustrator.png';
 import Photoshop from '../img/tech/photoshop.png';
-
-// Gallery Images
-
 const ProjFivePartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/7972e449087263.58ab220fb23f0.jpg';
 const ProjFivePartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2f985649087263.58ababab85d84.jpg';
 const ProjFivePartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/05ad0f49087263.58ab220fb2924.jpg';
@@ -33,12 +42,6 @@ const ProjFivePartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/
 import ProjFivePartFiveA from '../img/pieces/walltagged-7b.png';
 const ProjFivePartFiveB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/057eba49087263.58aba61019220.png';
 
-import ProjPicLink from '../img/home/project-05.jpg';
-const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
-const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
-const ProjFivePartOne = [
-  { src: ProjFivePartOneA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartOneA, }},
-];
 const ProjFivePartTwo = [
   { src: ProjFivePartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartTwoA, }},
   { src: ProjFivePartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjFivePartTwoB, }},
@@ -59,239 +62,130 @@ export default class ProjectFive extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      active: 0,
-    };
-
-    document.title = "WallTagged";
-    this.updateActiveState = this.updateActiveState.bind(this);
+    document.title = "Walltagged";
+    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center center';
   }
-
-  updateActiveState(newActive) {
-    this.setState({'active': newActive});
+  componentDidMount() {
+    scrollSpy.update();
   }
-
-  shouldComponentUpdate(nP, nS) {
-    return nS.active !== this.state.active;
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
-
-  onMouseOver(idx) {
-    this.setState({'hover': idx});
+  componentWillMount() {
+    scroll.scrollToTop();
   }
-
-  onMouseOut() {
-    this.setState({'hover': null});
+  scrollToTop() {
+    scroll.scrollToTop();
   }
-
-  compareStyles(component, idx) {
-    return idx === this.state.active ? component.activeStyles : idx === this.state.hover ? component.hoverStyles : component.nonActiveStyles
+  scrollToBottom() {
+    scroll.scrollToBottom();
+  }
+  scrollTo() {
+    scroll.scrollTo(100);
+  }
+  scrollMore() {
+    scroll.scrollMore(100);
+  }
+  handleSetActive(to) {
+    console.log(to);
   }
 
   render() {
-    let navCount = 3;
-    let navArr = [];
-    for (let i = 0; i < navCount; i++) {
-      navArr.push(i);
-    }
+
     return (
       <div>
         <Nav />
 
-        <Fullpage active={this.updateActiveState}>
+        <div className="projectIntro">
+          <div style={ProjBgHeader} className="projectIntroBanner">
 
-          <Slide className="projSlideOne" style={ProjBg}>
+            <div className="projTextWrap projTextWrapTop">
+              <div className="projIntroTop">
 
-            <div className="projContainer">
-              <div className="projColLeft">
+                <div className="projIntroLinksWrap">
+                  <img src={ProjLogo} className="projectLogo"/>
 
-                <h1>WallTagged</h1>
-                <div className="projPic" style={ProjPic}></div>
-                <p className="topText">An interactive drawing app consisting of drawing tools, and templates to draw over. This app version contains a set of tools able to be used on any device with touch or mouse, exportable as export as a PNG.</p>
+                  <a href="http://walltagged.us" className="projIntroLinks projIntroLinkOne">
+                    <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
+                  </a>
+                  <a href="https://github.com/brz0/walltagged" className="projIntroLinks projIntroLinkTwo">
+                    <i className="ion-social-github-outline"></i>&nbsp;&nbsp;github
+                  </a>
+                  <a href="https://www.behance.net/gallery/49087263/WallTagged" className="projIntroLinks projIntroLinkThree">
+                    <i className="ion-social-github-outline"></i>&nbsp;&nbsp;behance
+                  </a>
+                </div>
 
-                <TopNav className="projIndexNav">
-                  {navArr.map((n, idx) => {
-                  return <span key={idx} ref={n}></span>
-                  }, this)}
-                  <Link key={1} ref={1} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexOne">CONCEPT/UX</button></Link>
-                  <Link key={2} ref={2} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexTwo">WIREFRAMES</button></Link>
-                  <Link key={3} ref={3} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexThree projIndexBreak">UI</button></Link>
-                  <Link key={4} ref={4} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexFour">BRANDING</button></Link>
-                  <Link key={5} ref={5} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexFive">FEATURES</button></Link>
-                  <Link key={6} ref={6} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexSix">TECH</button></Link>
+                <p className="projTextIntro">An interactive drawing app consisting of drawing tools, and templates to draw over. This app version contains a set of tools able to be used on any device with touch or mouse, exportable as export as a PNG.</p>
+                <span className="projTags">canvas, art, tools, drawing, graffiti</span>
 
-                </TopNav>
-              </div>
-              <div className="projColRight projColRightHome">
-                <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tech</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">Sass, React, Javascript, Node, PostCSS, Webpack, Sketch, Illustrator, Photoshop</p>
-                <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">canvas, art, tools, drawing, graffiti</p>
-                <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <a href="http://walltagged.us">
-                  <p className="tagsProjIndex">walltagged.us</p>
-                </a>
+                <Link activeClass="active" to="projects" spy={true}
+                  smooth={true} offset={-42} duration={500} onSetActive={this.handleSetActive}>
+                  <button className="homeBtn hvr-pulse projViewBtn">
+                    <i className="ion-ios-bolt-outline"></i>&nbsp;&nbsp;VIEW PROJECT
+                  </button>
+                </Link>
+
               </div>
             </div>
-          </Slide>
 
+          </div>
 
-          <Slide className="projSlideTwo">
+        </div>
+
+          <div className="projTextWrap projTextWrapBody">
             <Element name="projects"></Element>
 
-            <div className="projContainer projContainerTwo">
-              <div className="projColLeft">
-                <h1>Concept</h1>
-                <p>the concept behind this project is to have a fun way to draw in browser with a number of modern web development tools. The responsiveness and ease of use allow for a fun tool to play with and save artwork on. The name of the app is based off of a graffiti term, treating the blank canvas in the app as a wall that you paint on.</p>
-                 <LazyLoad height={0}><Gallery photos={ProjFivePartOne} preloadNextImage={false} /></LazyLoad>
+            <h2 className="projHeaderTxt">Wireframes</h2>
+            <p className="projDesc">The first step of this project was to map out all the main screens and devices sizes. Also this stage first had a focus on the editor functionality and layout options. This stage had a couple iterations as well on the built wireframes after review, and research of good ways to best use the layout. The flow of the wireframes was built in this stage and also re-hashed, before selecting the best candidates for the UI mockups.</p>
+            <LazyLoad height={0}><Gallery photos={ProjFivePartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">UI</h2>
+            <p className="projDesc">From the iterations built in the wireframes, and branding styling, more re arranging and application of brand style was put into the UI mockups. The bold branding style was put into the elements to guide the user to the necessary features of the app. The welcome page is also designed to showcase quickly and guide the user to the drawing app or drawing templates.</p>
+            <LazyLoad height={0}><Gallery photos={ProjFivePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Branding</h2>
+            <p className="projDesc">The initial ideas for the branding styles are based on graffiti, playful colours and urban feel to it. The sharp edges of the elements, bold typography, and loud colourful images/content everywhere add to this style. The logo development process involved iconography associated with paint, art, urban, graffiti. It ended up as a word mark incorporating paint trails on a rounded “wall” or canvas.</p>
+            <LazyLoad height={0}><Gallery photos={ProjFivePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Features</h2>
+            <p className="projDesc">Canvas has quick responsive behaviour to click or touch on any device its used on. Template files can be loaded in the background to paint over. Ability to export multiple pngs of canvas in the same session. Canvas editor features a drawer of tools that minimize and get out of the canvas area when minimized.</p>
+            <LazyLoad height={0}><Gallery photos={ProjFivePartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Tech</h2>
+            <p className="projDesc">The app us built with responsive Javascript and CSS components built with a nodeJS server. The components use React JS for the drawing app editor which allow for a high level of interactivity with event detection and state manipulation. The responsive behaviour, layout and theming was built using Sass, with flex box grid for the much of the layout. The UI incorporates some material design components from the React JS library Material UI.</p>
+
+            <ReactTooltip />
+
+            <img src={Sass} className="techIcon" data-tip="Sass" data-effect="solid"/>
+            <img src={ReactJs} className="techIcon" data-tip="React" data-effect="solid"/>
+            <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
+            <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
+            <img src={PostCss} className="techIcon" data-tip="PostCSS" data-effect="solid"/>
+            <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
+            <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
+            <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
+            <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/> <br />
+
+            <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
+            <a href="odd-scenes" className="paginationLinkWrap">
+              <div style={PaginationImgPrev} className="projPagination">
+                <img src={PaginationLogoPrev} className="projPaginationLogo" />
               </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink sideProjActive">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
+            </a>
+            <a href="gold-tooth" className="paginationLinkWrap">
+            <div style={PaginationImgNext} className="projPagination">
+              <img src={PaginationLogoNext} className="projPaginationLogo" />
             </div>
+            </a>
 
-          </Slide>
-          <Slide className="projSlideThree">
-            <div className="projContainer projContainerThree">
-              <div className="projColLeft">
-                <h1>Wireframes</h1>
-                <p>The first step of this project was to map out all the main screens and devices sizes. Also this stage first had a focus on the editor functionality and layout options. This stage had a couple iterations as well on the built wireframes after review, and research of good ways to best use the layout. The flow of the wireframes was built in this stage and also re-hashed, before selecting the best candidates for the UI mockups.</p>
-                <LazyLoad height={0}><Gallery photos={ProjFivePartTwo} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink sideProjActive">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideFour">
-            <div className="projContainer projContainerFour">
-              <div className="projColLeft">
-                <h1>UI</h1>
-                <p>From the iterations built in the wireframes, and branding styling, more re arranging and application of brand style was put into the UI mockups. The bold branding style was put into the elements to guide the user to the necessary features of the app. The welcome page is also designed to showcase quickly and guide the user to the drawing app or drawing templates.</p>
-                <LazyLoad height={0}><Gallery photos={ProjFivePartThree} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink sideProjActive">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideFive">
-            <div className="projContainer projContainerFive">
-              <div className="projColLeft">
-                <h1>Branding</h1>
-                <p>The initial ideas for the branding styles are based on graffiti, playful colours and urban feel to it. The sharp edges of the elements, bold typography, and loud colourful images/content everywhere add to this style. The logo development process involved iconography associated with paint, art, urban, graffiti. It ended up as a word mark incorporating paint trails on a rounded “wall” or canvas.</p>
-                <LazyLoad height={0}><Gallery photos={ProjFivePartFour} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink sideProjActive">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideSix">
-            <div className="projContainer projContainerSix">
-              <div className="projColLeft">
-                <h1>Features</h1>
-                <p>Canvas has quick responsive behaviour to click or touch on any device its used on. Template files can be loaded in the background to paint over. Ability to export multiple pngs of canvas in the same session. Canvas editor features a drawer of tools that minimize and get out of the canvas area when minimized.</p>
-                <LazyLoad height={0}><Gallery photos={ProjFivePartFive} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink sideProjActive">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideSeven">
-            <div className="projContainer projContainerSeven">
-              <div className="projColLeft">
-                <h1>Tech</h1>
-                <p>The app us built with responsive Javascript and CSS components built with a nodeJS server. The components use React JS for the drawing app editor which allow for a high level of interactivity with event detection and state manipulation. The responsive behaviour, layout and theming was built using Sass, with flex box grid for the much of the layout. The UI incorporates some material design components from the React JS library Material UI.</p>
+          </div>
+        </div>
 
-                <ReactTooltip />
-
-                <img src={Sass} className="techIcon" data-tip="Sass" data-effect="solid"/>
-                <img src={ReactJs} className="techIcon" data-tip="React" data-effect="solid"/>
-                <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
-                <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
-                <img src={PostCss} className="techIcon" data-tip="PostCSS" data-effect="solid"/>
-                <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
-                <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
-                <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
-                <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/>
-
-                <br />
-                <h3>projects</h3>
-                <Link to="odd-scenes" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
-                <Link to="gold-tooth" className="errorLink"><button className="hvr-pulse projIndexBtn">NEXT &gt;&gt;</button></Link>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink sideProjActive">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-
-
-
-        </Fullpage>
-
-      </div>
     )
   }
 }

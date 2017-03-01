@@ -14,6 +14,9 @@ body {
 	outline: none;
 }
 
+::-moz-selection { background: $red; color: $white; }
+::selection { background: $red; color: $white; }
+
 @font-face {
     font-family: Fira;
     src: url(FiraCode-Bold.ttf);

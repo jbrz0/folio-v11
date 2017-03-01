@@ -1,5 +1,7 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
+var ReactGA = require('react-ga');
+ReactGA.initialize('UA-45238727-1');
 // import LazyLoad from 'react-lazyload';
 
 // import Home from './home.jsx';
@@ -14,11 +16,15 @@ import { Router, Route, browserHistory } from 'react-router';
 // import ProjectFive from './ProjectFive/ProjectFive.js';
 // import ProjectSix from './ProjectSix/ProjectSix.js';
 
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
 
 export default class App extends React.Component {
   render() {
     return (
-      <Router history={browserHistory}>
+      <Router history={browserHistory} onUpdate={logPageView}>
 
         <Route path="/" getComponent={(nextState, cb) => {
           require.ensure([], (require) => {

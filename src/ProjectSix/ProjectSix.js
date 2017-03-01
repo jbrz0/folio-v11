@@ -1,15 +1,27 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
-import {Link} from 'react-router';
 import ReactTooltip from 'react-tooltip';
+import Gallery from 'react-photo-gallery';
 import LazyLoad from 'react-lazyload';
 var Scroll  = require('react-scroll');
+var Link = Scroll.Link;
 var Element    = Scroll.Element;
-const {Fullpage, Slide, TopNav} = require('fullpage-react');
-import Gallery from 'react-photo-gallery';
-
-// Bg Top Image
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 import ProjBgLink from '../img/bg.png';
+
+// import ProjLogo from '../img/logos/logo-projects-05.svg';
+import ProjBgHeaderPath from '../img/project-header/projbg6.jpg';
+const ProjBgHeader = {backgroundImage: 'url(' + ProjBgHeaderPath + ')'};
+
+// Pagination
+import PaginationLogoPrev from '../img/logos/logo-projects-06.svg';
+import PaginationImgPrevPath from '../img/home/project-05.jpg';
+const PaginationImgPrev = {backgroundImage: 'url(' + PaginationImgPrevPath + ')'};
+import PaginationLogoNext from '../img/logos/logo-projects-01.svg';
+import PaginationImgNextPath from '../img/home/project-01.jpg';
+const PaginationImgNext = {backgroundImage: 'url(' + PaginationImgNextPath + ')'};
 
 // Tech Icons
 import ReactNative from '../img/tech/reactNative.png';
@@ -20,9 +32,6 @@ import Sketch from '../img/tech/sketch.png';
 import Illustrator from '../img/tech/illustrator.png';
 import Photoshop from '../img/tech/photoshop.png';
 
-// Gallery Images
-
-const ProjSixPartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/e71dec49117053.58abb3dfa3cbf.jpg';
 const ProjSixPartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/59147f49117053.58abb3dfa3139.jpg';
 const ProjSixPartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/1da4c449117053.58abb3dfa45b1.jpg';
 const ProjSixPartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/27a79849117053.58abb3dfa3967.jpg';
@@ -31,12 +40,6 @@ const ProjSixPartFourB = 'https://mir-s3-cdn-cf.behance.net/project_modules/max_
 const ProjSixPartFiveA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/74738249117053.58abbf1b01c24.jpg';
 import ProjSixPartFiveB from '../img/pieces/gold-7.jpg';
 
-import ProjPicLink from '../img/home/project-06.jpg';
-const ProjBg = {backgroundImage: 'url(' + ProjBgLink + ')'};
-const ProjPic = {backgroundImage: 'url(' + ProjPicLink + ')'};
-const ProjSixPartOne = [
-  { src: ProjSixPartOneA, width: 192, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartOneA, }},
-];
 const ProjSixPartTwo = [
   { src: ProjSixPartTwoA, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartTwoA, }},
   { src: ProjSixPartTwoB, width: 120, height: 120, aspectRatio: 1, lightboxImage: { src: ProjSixPartTwoB, }},
@@ -57,237 +60,129 @@ export default class ProjectSix extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      active: 0,
-    };
-
     document.title = "Gold Tooth";
-    this.updateActiveState = this.updateActiveState.bind(this);
+    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center center';
   }
-
-  updateActiveState(newActive) {
-    this.setState({'active': newActive});
+  componentDidMount() {
+    scrollSpy.update();
   }
-
-  shouldComponentUpdate(nP, nS) {
-    return nS.active !== this.state.active;
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
-
-  onMouseOver(idx) {
-    this.setState({'hover': idx});
+  componentWillMount() {
+    scroll.scrollToTop();
   }
-
-  onMouseOut() {
-    this.setState({'hover': null});
+  scrollToTop() {
+    scroll.scrollToTop();
   }
-
-  compareStyles(component, idx) {
-    return idx === this.state.active ? component.activeStyles : idx === this.state.hover ? component.hoverStyles : component.nonActiveStyles
+  scrollToBottom() {
+    scroll.scrollToBottom();
+  }
+  scrollTo() {
+    scroll.scrollTo(100);
+  }
+  scrollMore() {
+    scroll.scrollMore(100);
+  }
+  handleSetActive(to) {
+    console.log(to);
   }
 
   render() {
-    let navCount = 3;
-    let navArr = [];
-    for (let i = 0; i < navCount; i++) {
-      navArr.push(i);
-    }
+
     return (
       <div>
         <Nav />
 
-        <Fullpage active={this.updateActiveState}>
+        <div className="projectIntro">
+          <div style={ProjBgHeader} className="projectIntroBanner">
 
-          <Slide className="projSlideOne" style={ProjBg}>
+            <div className="projTextWrap projTextWrapTop">
+              <div className="projIntroTop">
 
-            <div className="projContainer">
-              <div className="projColLeft">
+                <div className="projIntroLinksWrap">
+                  {/* <img src={ProjLogo} className="projectLogo"/> */}
+                  <h1>Gold Tooth</h1>
 
-                <h1>Gold Tooth</h1>
-                <div className="projPic" style={ProjPic}></div>
-                <p className="topText">Gold Tooth is a mobile UI kit, consisting of design files and iOS template files to build projects on. It is based off of the new Javascript framework React Native, and allows for a great deal of functionality and design to go into the UI kit for developers to use.</p>
+                  {/* <a href="https://github.com/brz0/gold-tooth" className="projIntroLinks projIntroLinkOne">
+                    <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
+                  </a> */}
+                  <a href="https://github.com/brz0/gold-tooth" className="projIntroLinks projIntroLinkTwo">
+                    <i className="ion-social-github-outline"></i>&nbsp;&nbsp;github
+                  </a>
+                  <a href="https://www.behance.net/gallery/49117053/Gold-Tooth" className="projIntroLinks projIntroLinkThree">
+                    <i className="ion-social-github-outline"></i>&nbsp;&nbsp;behance
+                  </a>
+                </div>
 
-                <TopNav className="projIndexNav">
-                  {navArr.map((n, idx) => {
-                  return <span key={idx} ref={n}></span>
-                  }, this)}
-                  <Link key={1} ref={1} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexOne">CONCEPT/UX</button></Link>
-                  <Link key={2} ref={2} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexTwo">WIREFRAMES</button></Link>
-                  <Link key={3} ref={3} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexThree projIndexBreak">UI</button></Link>
-                  <Link key={4} ref={4} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexFour">BRANDING</button></Link>
-                  <Link key={5} ref={5} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexFive">FEATURES</button></Link>
-                  <Link key={6} ref={6} className="errorLink"><button className="hvr-pulse projIndexBtn projIndexSix">TECH</button></Link>
+                <p className="projTextIntro">Gold Tooth is a mobile UI kit, consisting of design files and iOS template files to build projects on. It is based off of the new Javascript framework React Native, and allows for a great deal of functionality and design to go into the UI kit for developers to use.</p>
+                <span className="projTags">iOS, styling, UI Kit, Phone, Mobile</span>
 
-                </TopNav>
-              </div>
-              <div className="projColRight projColRightHome">
-                <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tech</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">React Native, Javascript, Node, Webpack, Sketch, Illustrator, Photoshop</p>
-                <h3 className="projRightHeader projRightHeaderHome tagsProjIndexSm">Tags</h3>
-                <p className="tagsProjIndex tagsProjIndexSm">iOS, styling, UI Kit, Phone, Mobile</p>
-                <h3 className="projRightHeader projRightHeaderHome">Website</h3>
-                <a href="http://github.com/brz0/gold-tooth">
-                  <p className="tagsProjIndex">github.com/brz0/gold-tooth</p>
-                </a>
+                <Link activeClass="active" to="projects" spy={true}
+                  smooth={true} offset={-42} duration={500} onSetActive={this.handleSetActive}>
+                  <button className="homeBtn hvr-pulse projViewBtn">
+                    <i className="ion-ios-bolt-outline"></i>&nbsp;&nbsp;VIEW PROJECT
+                  </button>
+                </Link>
+
               </div>
             </div>
-          </Slide>
 
+          </div>
 
-          <Slide className="projSlideTwo">
+        </div>
+
+          <div className="projTextWrap projTextWrapBody">
             <Element name="projects"></Element>
 
-            <div className="projContainer projContainerTwo">
-              <div className="projColLeft">
-                <h1>Concept</h1>
-                <p>The main idea behind the project is to build an easy to use, interchangeable, and well designed phone UI kit with a distinct style. The kit contains a big selection of screens for a variety of use cases like Dashboards, lists, events etc.</p>
-                 <LazyLoad height={0}><Gallery photos={ProjSixPartOne} preloadNextImage={false} /></LazyLoad>
+            <h2 className="projHeaderTxt">Wireframes</h2>
+            <p className="projDesc">The wireframes for this project consist of multiple iterations for different layouts. They were built off of a list of what was considered to be the most important and useful screens, to be used by developers. The grid, elements, and structure of everything maintains a similar style and some of the elements on the pages are re used throughout the library.</p>
+            <LazyLoad height={0}><Gallery photos={ProjSixPartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">UI</h2>
+            <p className="projDesc">The interface mockup stage of this project involved scrapping a few of the wireframe ideas and adding some other ones, refactoring many as well. The concept developed in the branding made many of the wireframe layouts easy to understand at first glance as well, with the popping gold element on the pages.</p>
+            <LazyLoad height={0}><Gallery photos={ProjSixPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Branding</h2>
+            <p className="projDesc">The brand imagery uses a shiny and modern look to it, although the overall structure and design of the interfaces can be suited to different brand colours, type and imagery also. The gold tooth name and logo take from the idea of having a shiny object stand out. This concept is applied throughout the layouts as well with one main button or focal point in each layout being the most important call to action in the page.</p>
+            <LazyLoad height={0}><Gallery photos={ProjSixPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Features</h2>
+            <p className="projDesc">The themed Sketch files for this UI kit can be easily edited and adjusted for quick mocking up any new project, with the basic layout and structure included in both branded, and bare wireframe versions. The developed version can be easily cloned from the git repo, and started to see and work with the components to build an app with. The layout and structure is made to work on both large and small screen sizes, and adjusts with fluid behaviour using flexbox.</p>
+            <LazyLoad height={0}><Gallery photos={ProjSixPartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+            <h2 className="projHeaderTxt">Tech</h2>
+            <p className="projDesc">The main platform used for this project is React Native, which allows React style javascript to be used to achieve native functionality on the phone for the user. It also allows easy swapping and management of components/state by using all the benefits of React JS. The project has extensive styling for the pages developed so far, and is easy to adjust and manage within the component files. Using this setup on a nodeJS platform also allows easy use of package dependencies for any additional functionality thats needed.</p>
+
+            <ReactTooltip />
+
+            <img src={ReactNative} className="techIcon" data-tip="React Native" data-effect="solid"/>
+            <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
+            <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
+            <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
+            <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
+            <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
+            <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/><br />
+
+            <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
+            <a href="walltagged" className="paginationLinkWrap">
+              <div style={PaginationImgPrev} className="projPagination">
+                <img src={PaginationLogoPrev} className="projPaginationLogo" />
               </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink sideProjActive">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
+            </a>
+            <a href="chart-suite" className="paginationLinkWrap">
+            <div style={PaginationImgNext} className="projPagination">
+              <img src={PaginationLogoNext} className="projPaginationLogo terminalPagination" />
             </div>
+            </a>
 
-          </Slide>
-          <Slide className="projSlideThree">
-            <div className="projContainer projContainerThree">
-              <div className="projColLeft">
-                <h1>Wireframes</h1>
-                <p>The wireframes for this project consist of multiple iterations for different layouts. They were built off of a list of what was considered to be the most important and useful screens, to be used by developers. The grid, elements, and structure of everything maintains a similar style and some of the elements on the pages are re used throughout the library.</p>
-                <LazyLoad height={0}><Gallery photos={ProjSixPartTwo} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink sideProjActive">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideFour">
-            <div className="projContainer projContainerFour">
-              <div className="projColLeft">
-                <h1>UI</h1>
-                <p>The interface mockup stage of this project involved scrapping a few of the wireframe ideas and adding some other ones, refactoring many as well. The concept developed in the branding made many of the wireframe layouts easy to understand at first glance as well, with the popping gold element on the pages.</p>
-                <LazyLoad height={0}><Gallery photos={ProjSixPartThree} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink sideProjActive">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideFive">
-            <div className="projContainer projContainerFive">
-              <div className="projColLeft">
-                <h1>Branding</h1>
-                <p>The brand imagery uses a shiny and modern look to it, although the overall structure and design of the interfaces can be suited to different brand colours, type and imagery also. The gold tooth name and logo take from the idea of having a shiny object stand out. This concept is applied throughout the layouts as well with one main button or focal point in each layout being the most important call to action in the page.</p>
-                <LazyLoad height={0}><Gallery photos={ProjSixPartFour} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink sideProjActive">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideSix">
-            <div className="projContainer projContainerSix">
-              <div className="projColLeft">
-                <h1>Features</h1>
-                <p>The themed Sketch files for this UI kit can be easily edited and adjusted for quick mocking up any new project, with the basic layout and structure included in both branded, and bare wireframe versions. The developed version can be easily cloned from the git repo, and started to see and work with the components to build an app with. The layout and structure is made to work on both large and small screen sizes, and adjusts with fluid behaviour using flexbox.</p>
-                <LazyLoad height={0}><Gallery photos={ProjSixPartFive} preloadNextImage={false} /></LazyLoad>
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink sideProjActive">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-          <Slide className="projSlideSeven">
-            <div className="projContainer projContainerSeven">
-              <div className="projColLeft">
-                <h1>Tech</h1>
-                <p>The main platform used for this project is React Native, which allows React style javascript to be used to achieve native functionality on the phone for the user. It also allows easy swapping and management of components/state by using all the benefits of React JS. The project has extensive styling for the pages developed so far, and is easy to adjust and manage within the component files. Using this setup on a nodeJS platform also allows easy use of package dependencies for any additional functionality thats needed.</p>
+          </div>
+        </div>
 
-                <ReactTooltip />
-
-                <img src={ReactNative} className="techIcon" data-tip="React Native" data-effect="solid"/>
-                <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
-                <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
-                <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
-                <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
-                <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
-                <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/>
-
-                <br />
-                <h3>projects</h3>
-                <Link to="walltagged" className="errorLink"><button className="hvr-pulse projIndexBtn">&lt;&lt; PREV</button></Link>
-                {/* <Link to="gold-tooth" className="errorLink"><button className="hvr-pulse projIndexBtn">NEXT &gt;&gt;</button></Link> */}
-              </div>
-              <div className="projColRight">
-                <h3 className="projRightHeader">Contents</h3>
-                <TopNav className="projIndexNav projSideNav">
-                  {navArr.map((n, idx) => { return <div key={idx} ref={n}></div>}, this)}
-                  <Link key={0} ref={0}><span className="sideProjLink">INTRO</span></Link>
-                  <Link key={1} ref={1}><span className="sideProjLink">CONCEPT</span></Link>
-                  <Link key={2} ref={2}><span className="sideProjLink">WIREFRAMES</span></Link>
-                  <Link key={3} ref={3}><span className="sideProjLink">UI</span></Link>
-                  <Link key={4} ref={4}><span className="sideProjLink">BRANDING</span></Link>
-                  <Link key={5} ref={5}><span className="sideProjLink">FEATURES</span></Link>
-                  <Link key={6} ref={6}><span className="sideProjLink sideProjActive">TECH</span></Link>
-                </TopNav>
-              </div>
-            </div>
-          </Slide>
-
-
-
-        </Fullpage>
-
-      </div>
     )
   }
 }

@@ -4,27 +4,30 @@ import HomeBgLink from '../img/bg.png';
 const HomeBg = {backgroundImage: 'url(' + HomeBgLink + ')'};
 
 var Scroll  = require('react-scroll');
-var Link       = Scroll.Link;
+var Link = Scroll.Link;
 // var Element    = Scroll.Element;
-var Events     = Scroll.Events;
-var scroll     = Scroll.animateScroll;
-var scrollSpy  = Scroll.scrollSpy;
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 
 
 export default class Intro extends React.Component {
 
   componentDidMount() {
-    Events.scrollEvent.register('begin', function(to, element) {
-      console.log("begin", arguments);
-    });
-    Events.scrollEvent.register('end', function(to, element) {
-      console.log("end", arguments);
-    });
+    // Events.scrollEvent.register('begin', function(to, element) {
+    //   console.log("begin", arguments);
+    // });
+    // Events.scrollEvent.register('end', function(to, element) {
+    //   console.log("end", arguments);
+    // });
     scrollSpy.update();
   }
   componentWillUnmount() {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
+  }
+  componentWillMount() {
+    scroll.scrollToTop();
   }
   scrollToTop() {
     scroll.scrollToTop();
