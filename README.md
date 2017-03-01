@@ -1,27 +1,32 @@
-# Portfolio website template
+<img src="https://cdn.rawgit.com/brz0/folio-v11/master/src/img/logo-dark.svg" alt="alt text" width="350">
+
+<img src="https://img.shields.io/npm/l/express.svg"> <img src="https://img.shields.io/david/strongloop/express.svg">
+
+Personal website template
+
+[**http://justinbrazeau.com**](http://justinbrazeau.com)
 
 
-## Sample nginx config
-etc/nginx/sites-available/default
+<img src="https://goo.gl/xjLW30">
 
+# Dependencies
+
+* Webpack
+* Babel
+* NodeJS
+* ReCharts
+* ReactJS
+* Sass
+* PostCSS
+
+# Installation
+
+```bash
+git clone <repo>
+yarn install
+yarn start
 ```
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
 
-    root /var/www/folio-v11;
-    index index.html index.htm index.nginx-debian.html;
-    server_name _;
-    location / {
-    proxy_pass http://138.197.93.234:5000;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-  }
+# Lisence
 
-  gzip on;
-  gzip_http_version 1.1;
-  gzip_types text/plain text/css text/xml application/javascript image/svg+xml;
-}
-```
+This project is licensed under the MIT License - see the LICENSE file for details
