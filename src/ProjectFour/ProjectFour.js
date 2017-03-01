@@ -64,10 +64,14 @@ export default class ProjectFour extends React.Component {
   constructor(props) {
     super(props)
     document.title = "Odd Scenes";
-    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
+    if (window.matchMedia('(max-width: 720px)').matches) {
+    document.body.style.backgroundImage = 'none';
+    } else {
+    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
+    }
   }
   componentDidMount() {
     scrollSpy.update();

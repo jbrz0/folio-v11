@@ -33,7 +33,6 @@ import Webpack from '../img/tech/webpack.png';
 import Sketch from '../img/tech/sketch.png';
 import Illustrator from '../img/tech/illustrator.png';
 import Photoshop from '../img/tech/photoshop.png';
-const ProjFivePartOneA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/7972e449087263.58ab220fb23f0.jpg';
 const ProjFivePartTwoA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2f985649087263.58ababab85d84.jpg';
 const ProjFivePartTwoB = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/05ad0f49087263.58ab220fb2924.jpg';
 const ProjFivePartThreeA = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/00d3fb49087263.58ab220fb164a.jpg';
@@ -63,10 +62,14 @@ export default class ProjectFive extends React.Component {
   constructor(props) {
     super(props)
     document.title = "Walltagged";
-    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
+    if (window.matchMedia('(max-width: 720px)').matches) {
+    document.body.style.backgroundImage = 'none';
+    } else {
+    document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';
+    }
   }
   componentDidMount() {
     scrollSpy.update();
