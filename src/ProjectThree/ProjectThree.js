@@ -65,7 +65,7 @@ export default class ProjectThree extends React.Component {
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
-    if (window.matchMedia('(max-width: 720px)').matches) {
+    if (window.matchMedia('(max-width: 767px)').matches) {
     document.body.style.backgroundImage = 'none';
     } else {
     document.body.style.backgroundImage = 'url(' + ProjBgLink + ')';

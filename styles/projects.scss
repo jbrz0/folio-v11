@@ -249,12 +249,6 @@ div#Gallery img {
 }
 
 @media (max-width: 700px) {
-  div#Gallery img {
-    // width: 60px;
-    // height: 60px;
-    width: 128px;
-    height: 80px;
-  }
   .projSideNav .sideProjLink {
     display: inline-block;
     margin-left: 5px !important;
@@ -357,10 +351,6 @@ div#Gallery img {
   .projColLeft p
    {
     display: none;
-  }
-  div#Gallery img {
-    width: 60px;
-    height: 60px;
   }
   .menuList {
     top: 0px;
@@ -502,7 +492,7 @@ div#Gallery img {
 
 .projDesc {
   margin-bottom: 44px;
-  line-height: 1.5em;
+  line-height: 1.6em;
   margin-top: 24px;
   color: $lightgrey;
   text-align: justify;
@@ -602,6 +592,7 @@ div#Gallery img {
 .projViewBtn {
   margin-left: 0px;
   padding-top: 4px;
+  padding-bottom: 12px;
   background: $red;
   border-color: $red;
 }
@@ -675,5 +666,22 @@ div#Gallery img {
     transform: none;
     padding-top: 70px;
     padding-bottom: 70px;
+  }
+  .projIntroTop {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .projectIntro {
+    height: auto;
+    position: static;
+    width: 100%;
+  }
+  .projDesc {
+    font-size: 0.9em;
+    line-height: 1.5em;
   }
 }
