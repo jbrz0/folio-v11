@@ -14,7 +14,6 @@ Personal website template
 * Webpack
 * Babel
 * NodeJS
-* ReCharts
 * ReactJS
 * Sass
 * PostCSS
