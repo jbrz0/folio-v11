@@ -654,6 +654,9 @@ div#Gallery img {
   .projDesc {
     text-align: left;
   }
+  .projTags {
+    display: none;
+  }
 }
 
 @media (max-height: 500px) {
