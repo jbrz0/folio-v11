@@ -7,7 +7,7 @@ Personal website template
 [**http://justinbrazeau.com**](http://justinbrazeau.com)
 
 
-<img src="https://goo.gl/xjLW30">
+<img src="http://i.imgur.com/XVKqNQF.jpg">
 
 # Dependencies
 
