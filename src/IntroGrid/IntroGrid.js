@@ -1,7 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router';
+var Scroll  = require('react-scroll');
+var Element    = Scroll.Element;
+
 import Social from '../Social/Social.js';
 import Footer from '../Footer/Footer.js';
-import {Link} from 'react-router';
 
 import LogoOne from '../img/logos/logo-projects-01.svg';
 import LogoTwo from '../img/logos/logo-projects-02.svg';
@@ -22,49 +25,44 @@ const ProjectFour = {backgroundImage: 'url(' + ProjectFourPath + ')'}
 const ProjectFive = {backgroundImage: 'url(' + ProjectFivePath + ')'}
 const ProjectSix = {backgroundImage: 'url(' + ProjectSixPath + ')'}
 
-var Scroll  = require('react-scroll');
-var Element    = Scroll.Element;
-
 export default class IntroGrid extends React.Component {
   render() {
     return (
-
-        <div className="introGridWrap">
-          <Element name="projects"></Element>
-          <Link to="chart-suite">
-            <div className="introGridCell" style={ProjectOne}>
-              <img src={LogoOne} className="logoHome" alt="Chart Suite"/>
-            </div>
-          </Link>
-          <Link to="terminal-ui">
-            <div className="introGridCell" style={ProjectTwo}>
-              <img src={LogoTwo} className="logoHome" alt="Terminal UI"/>
-            </div>
-          </Link>
-          <Link to="homes-from-the-future">
-            <div className="introGridCell" style={ProjectThree}>
-              <img src={LogoThree} className="logoHome" alt="Homes From The Future"/>
-            </div>
-          </Link>
-          <Link to="odd-scenes">
-            <div className="introGridCell" style={ProjectFour}>
-              <img src={LogoFour} className="logoHome" alt="Odd Scenes"/>
-            </div>
-          </Link>
-          <Link to="walltagged">
-            <div className="introGridCell" style={ProjectFive}>
-              <img src={LogoFive} className="logoHome" alt="Wall Tagged"/>
-            </div>
-          </Link>
-          <Link to="gold-tooth">
-            <div className="introGridCell" style={ProjectSix}>
-              <img src={LogoSix} className="logoHome" alt="Gold Tooth"/>
-            </div>
-          </Link>
-          <Social />
-          <Footer />
-        </div>
-
+      <div className="introGridWrap">
+        <Element name="projects"></Element>
+        <Link to="chart-suite">
+          <div className="introGridCell" style={ProjectOne}>
+            <img src={LogoOne} className="logoHome" alt="Chart Suite"/>
+          </div>
+        </Link>
+        <Link to="terminal-ui">
+          <div className="introGridCell" style={ProjectTwo}>
+            <img src={LogoTwo} className="logoHome" alt="Terminal UI"/>
+          </div>
+        </Link>
+        <Link to="homes-from-the-future">
+          <div className="introGridCell" style={ProjectThree}>
+            <img src={LogoThree} className="logoHome" alt="Homes From The Future"/>
+          </div>
+        </Link>
+        <Link to="odd-scenes">
+          <div className="introGridCell" style={ProjectFour}>
+            <img src={LogoFour} className="logoHome" alt="Odd Scenes"/>
+          </div>
+        </Link>
+        <Link to="walltagged">
+          <div className="introGridCell" style={ProjectFive}>
+            <img src={LogoFive} className="logoHome" alt="Wall Tagged"/>
+          </div>
+        </Link>
+        <Link to="gold-tooth">
+          <div className="introGridCell" style={ProjectSix}>
+            <img src={LogoSix} className="logoHome" alt="Gold Tooth"/>
+          </div>
+        </Link>
+        <Social />
+        <Footer />
+      </div>
     )
   }
 }

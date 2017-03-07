@@ -30,7 +30,6 @@ const customStyles = {
   }
 };
 
-
 function setStyle( objId, propertyObject ) {
  var elem = document.getElementById(objId);
  for (var property in propertyObject)
@@ -39,58 +38,46 @@ function setStyle( objId, propertyObject ) {
 
 var scrollObject = {};
 function getScrollPosition(){
-    scrollObject = {
-       x: window.pageXOffset,
-       y: window.pageYOffset
-    }
-    // change nav on window height - height of scrollbar
-    if(scrollObject.y > window.innerHeight - 50) {
-        setStyle('nav', {'background': '#F8F5F9', 'transition': '1s'});
-        setStyle('logoLight', {'display': 'none', 'transition': '1s'});
-        setStyle('logoDark', {'display': 'inline-block', 'transition': '1s'});
-        setStyle('menuLight', {'display': 'none', 'transition': '1s'});
-        setStyle('menuDark', {'display': 'block', 'transition': '1s'});
-        document.activeElement.blur();
-    } else {
-        setStyle('nav', {'background': 'transparent', 'transition': '1s'});
-        setStyle('logoLight', {'display': 'inline-block', 'transition': '1s'});
-        setStyle('logoDark', {'display': 'none', 'transition': '1s'});
-        setStyle('menuLight', {'display': 'block', 'transition': '1s'});
-        setStyle('menuDark', {'display': 'none', 'transition': '1s'});
-    }
+  scrollObject = {
+     x: window.pageXOffset,
+     y: window.pageYOffset
+  }
+  if(scrollObject.y > window.innerHeight - 50) {
+    setStyle('nav', {'background': '#F8F5F9', 'transition': '1s'});
+    setStyle('logoLight', {'display': 'none', 'transition': '1s'});
+    setStyle('logoDark', {'display': 'inline-block', 'transition': '1s'});
+    setStyle('menuLight', {'display': 'none', 'transition': '1s'});
+    setStyle('menuDark', {'display': 'block', 'transition': '1s'});
+    document.activeElement.blur();
+  } else {
+    setStyle('nav', {'background': 'transparent', 'transition': '1s'});
+    setStyle('logoLight', {'display': 'inline-block', 'transition': '1s'});
+    setStyle('logoDark', {'display': 'none', 'transition': '1s'});
+    setStyle('menuLight', {'display': 'block', 'transition': '1s'});
+    setStyle('menuDark', {'display': 'none', 'transition': '1s'});
+  }
 }
 window.onscroll = getScrollPosition;
-
-
 
 export default class Nav extends React.Component {
 
   constructor() {
-  super();
+    super();
 
-  this.state = {
-    modalIsOpen: false
-  };
-
+    this.state = {
+      modalIsOpen: false
+    };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
   openModal() {
     this.setState({modalIsOpen: true});
   }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
-
+  afterOpenModal() {}
   closeModal() {
     this.setState({modalIsOpen: false});
   }
-
-
   render() {
     return (
       <div>
@@ -101,15 +88,10 @@ export default class Nav extends React.Component {
           <img src={MenuBtnDark} className="menuBtn" id="menuDark" alt="Menu" onClick={this.openModal} />
         </div>
 
-
-
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
+          <Modal
+            isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal} style={customStyles}
+            contentLabel="Example Modal" >
 
           <button onClick={this.closeModal} className="modalBtnClose">
             <img src={MenuClose} className="modalBtnCloseImg" />
@@ -158,10 +140,8 @@ export default class Nav extends React.Component {
                 </div>
               </a>
             </div>
-
           </div>
         </Modal>
-
       </div>
     )
   }

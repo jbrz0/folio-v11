@@ -92,9 +92,6 @@ export default class ProjectTwo extends React.Component {
   scrollMore() {
     scroll.scrollMore(100);
   }
-  handleSetActive(to) {
-    console.log(to);
-  }
 
   render() {
 
