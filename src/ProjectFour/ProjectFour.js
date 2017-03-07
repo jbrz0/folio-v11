@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../Nav/Nav.js';
 import ReactTooltip from 'react-tooltip';
 import Gallery from 'react-photo-gallery';
 import LazyLoad from 'react-lazyload';
@@ -9,8 +8,9 @@ var Element    = Scroll.Element;
 var Events = Scroll.Events;
 var scroll = Scroll.animateScroll;
 var scrollSpy = Scroll.scrollSpy;
-import ProjBgLink from '../img/bg.png';
 
+import Nav from '../Nav/Nav.js';
+import ProjBgLink from '../img/bg.png';
 import ProjLogo from '../img/logos/logo-projects-04.svg';
 import ProjBgHeaderPath from '../img/project-header/projbg4.jpg';
 const ProjBgHeader = {backgroundImage: 'url(' + ProjBgHeaderPath + ')'};
@@ -67,6 +67,7 @@ export default class ProjectFour extends React.Component {
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
+
     if (window.matchMedia('(max-width: 767px)').matches) {
     document.body.style.backgroundImage = 'none';
     } else {
@@ -80,40 +81,23 @@ export default class ProjectFour extends React.Component {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
   }
-  componentWillMount() {
-    scroll.scrollToTop();
-  }
-  scrollToTop() {
-    scroll.scrollToTop();
-  }
-  scrollToBottom() {
-    scroll.scrollToBottom();
-  }
-  scrollTo() {
-    scroll.scrollTo(100);
-  }
-  scrollMore() {
-    scroll.scrollMore(100);
-  }
-  handleSetActive(to) {
-    console.log(to);
-  }
+  componentWillMount() { scroll.scrollToTop(); }
+  scrollToTop() { scroll.scrollToTop(); }
+  scrollToBottom() { scroll.scrollToBottom(); }
+  scrollTo() { scroll.scrollTo(100); }
+  scrollMore() { scroll.scrollMore(100); }
 
   render() {
 
     return (
       <div>
         <Nav />
-
         <div className="projectIntro">
           <div style={ProjBgHeader} className="projectIntroBanner">
-
             <div className="projTextWrap projTextWrapTop">
               <div className="projIntroTop">
-
                 <div className="projIntroLinksWrap">
                   <img src={ProjLogo} className="projectLogo"/>
-
                   <a href="http://oddscenes.us" className="projIntroLinks projIntroLinkOne">
                     <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
                   </a>
@@ -134,63 +118,58 @@ export default class ProjectFour extends React.Component {
                     <i className="ion-ios-bolt-outline"></i>&nbsp;&nbsp;VIEW PROJECT
                   </button>
                 </Link>
-
               </div>
             </div>
-
-          </div>
-
-        </div>
-
-          <div className="projTextWrap projTextWrapBody">
-            <Element name="projects"></Element>
-
-            <h2 className="projHeaderTxt">Wireframes</h2>
-            <p className="projDesc">The first step of these wireframes was mapping out all the main layouts for the sections on the site. Knowing it will be a one page, scrolling website there was a couple iterations of the layout made, as well as some experimental external shop page templates. From there revisions were made and altered versions were made.</p>
-            <LazyLoad height={0}><Gallery photos={ProjFourPartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
-
-            <h2 className="projHeaderTxt">UI</h2>
-            <p className="projDesc">At this stage the decision of what artwork to add as the floating elements to the chosen layouts was made, as well as the best flow/layout to go with. The elements used the bright colours to pop out of the layout and give each section a distinct call to action. More of the text and flow was mapped out also in this stage, after incorporating the developed branding style.</p>
-            <LazyLoad height={0}><Gallery photos={ProjFourPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
-
-            <h2 className="projHeaderTxt">Branding</h2>
-            <p className="projDesc">The brand itself is built on style incorporating abstracted shapes, bright colours and sometimes using different media/technology to make its pieces. The logo plays on this with a chaotic layout of some basic shapes, the same way the illustration elements are made. The colours and shapes use a bold turquoise and purple combination that were initially being used years ago as its colours, with more accents and shading being added to the palette.</p>
-            <LazyLoad height={0}><Gallery photos={ProjFourPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
-
-            <h2 className="projHeaderTxt">Features</h2>
-            <p className="projDesc">High quality images optimized and compressed to load fast and display well. Responsive behaviour of unique style grids flows well into smaller screens. Shop page, modal loads up a menu with information and a bold direct link to product.</p>
-            <LazyLoad height={0}><Gallery photos={ProjFourPartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
-
-            <h2 className="projHeaderTxt">Tech</h2>
-            <p className="projDesc">A lightweight nodeJS app built with Sass and ReactJS as its main front end tools. Using a fairly basic setup with some PostCSS plugins for extra layout design and automation. Modules build into an optimized, minified single page application with a modified webpack setup. Some extra NPM packages also used as a basis for modals, and other ui elements.</p>
-
-            <ReactTooltip />
-
-            <img src={Sass} className="techIcon" data-tip="Sass" data-effect="solid"/>
-            <img src={ReactJs} className="techIcon" data-tip="React" data-effect="solid"/>
-            <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
-            <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
-            <img src={PostCss} className="techIcon" data-tip="PostCSS" data-effect="solid"/>
-            <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
-            <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
-            <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
-            <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/> <br />
-
-            <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
-            <a href="homes-from-the-future" className="paginationLinkWrap">
-              <div style={PaginationImgPrev} className="projPagination">
-                <img src={PaginationLogoPrev} className="projPaginationLogo terminalPagination" />
-              </div>
-            </a>
-            <a href="walltagged" className="paginationLinkWrap">
-            <div style={PaginationImgNext} className="projPagination">
-              <img src={PaginationLogoNext} className="projPaginationLogo" />
-            </div>
-            </a>
-
           </div>
         </div>
 
+        <div className="projTextWrap projTextWrapBody">
+          <Element name="projects"></Element>
+
+          <h2 className="projHeaderTxt">Wireframes</h2>
+          <p className="projDesc">The first step of these wireframes was mapping out all the main layouts for the sections on the site. Knowing it will be a one page, scrolling website there was a couple iterations of the layout made, as well as some experimental external shop page templates. From there revisions were made and altered versions were made.</p>
+          <LazyLoad height={300}><Gallery photos={ProjFourPartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+          <h2 className="projHeaderTxt">UI</h2>
+          <p className="projDesc">At this stage the decision of what artwork to add as the floating elements to the chosen layouts was made, as well as the best flow/layout to go with. The elements used the bright colours to pop out of the layout and give each section a distinct call to action. More of the text and flow was mapped out also in this stage, after incorporating the developed branding style.</p>
+          <LazyLoad height={300}><Gallery photos={ProjFourPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+          <h2 className="projHeaderTxt">Branding</h2>
+          <p className="projDesc">The brand itself is built on style incorporating abstracted shapes, bright colours and sometimes using different media/technology to make its pieces. The logo plays on this with a chaotic layout of some basic shapes, the same way the illustration elements are made. The colours and shapes use a bold turquoise and purple combination that were initially being used years ago as its colours, with more accents and shading being added to the palette.</p>
+          <LazyLoad height={300}><Gallery photos={ProjFourPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+          <h2 className="projHeaderTxt">Features</h2>
+          <p className="projDesc">High quality images optimized and compressed to load fast and display well. Responsive behaviour of unique style grids flows well into smaller screens. Shop page, modal loads up a menu with information and a bold direct link to product.</p>
+          <LazyLoad height={300}><Gallery photos={ProjFourPartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+
+          <h2 className="projHeaderTxt">Tech</h2>
+          <p className="projDesc">A lightweight nodeJS app built with Sass and ReactJS as its main front end tools. Using a fairly basic setup with some PostCSS plugins for extra layout design and automation. Modules build into an optimized, minified single page application with a modified webpack setup. Some extra NPM packages also used as a basis for modals, and other ui elements.</p>
+
+          <ReactTooltip />
+
+          <img src={Sass} className="techIcon" data-tip="Sass" data-effect="solid"/>
+          <img src={ReactJs} className="techIcon" data-tip="React" data-effect="solid"/>
+          <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
+          <img src={NodeJs} className="techIcon" data-tip="NodeJS" data-effect="solid"/>
+          <img src={PostCss} className="techIcon" data-tip="PostCSS" data-effect="solid"/>
+          <img src={Webpack} className="techIcon" data-tip="Webpack" data-effect="solid"/>
+          <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
+          <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
+          <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/> <br />
+
+          <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
+          <a href="homes-from-the-future" className="paginationLinkWrap">
+            <div style={PaginationImgPrev} className="projPagination">
+              <img src={PaginationLogoPrev} className="projPaginationLogo terminalPagination" />
+            </div>
+          </a>
+          <a href="walltagged" className="paginationLinkWrap">
+          <div style={PaginationImgNext} className="projPagination">
+            <img src={PaginationLogoNext} className="projPaginationLogo" />
+          </div>
+          </a>
+        </div>
+      </div>
     )
   }
 }

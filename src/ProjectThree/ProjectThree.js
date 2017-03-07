@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../Nav/Nav.js';
 import ReactTooltip from 'react-tooltip';
 import Gallery from 'react-photo-gallery';
 import LazyLoad from 'react-lazyload';
@@ -9,8 +8,9 @@ var Element    = Scroll.Element;
 var Events = Scroll.Events;
 var scroll = Scroll.animateScroll;
 var scrollSpy = Scroll.scrollSpy;
-import ProjBgLink from '../img/bg.png';
 
+import Nav from '../Nav/Nav.js';
+import ProjBgLink from '../img/bg.png';
 import ProjLogo from '../img/logos/logo-projects-03.svg';
 import ProjBgHeaderPath from '../img/project-header/projbg3.jpg';
 const ProjBgHeader = {backgroundImage: 'url(' + ProjBgHeaderPath + ')'};
@@ -65,6 +65,7 @@ export default class ProjectThree extends React.Component {
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
+
     if (window.matchMedia('(max-width: 767px)').matches) {
     document.body.style.backgroundImage = 'none';
     } else {
@@ -78,40 +79,23 @@ export default class ProjectThree extends React.Component {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
   }
-  componentWillMount() {
-    scroll.scrollToTop();
-  }
-  scrollToTop() {
-    scroll.scrollToTop();
-  }
-  scrollToBottom() {
-    scroll.scrollToBottom();
-  }
-  scrollTo() {
-    scroll.scrollTo(100);
-  }
-  scrollMore() {
-    scroll.scrollMore(100);
-  }
-  handleSetActive(to) {
-    console.log(to);
-  }
+  componentWillMount() { scroll.scrollToTop(); }
+  scrollToTop() { scroll.scrollToTop(); }
+  scrollToBottom() { scroll.scrollToBottom(); }
+  scrollTo() { scroll.scrollTo(100); }
+  scrollMore() { scroll.scrollMore(100); }
 
   render() {
 
     return (
       <div>
         <Nav />
-
         <div className="projectIntro">
           <div style={ProjBgHeader} className="projectIntroBanner">
-
             <div className="projTextWrap projTextWrapTop">
               <div className="projIntroTop">
-
                 <div className="projIntroLinksWrap">
                   <img src={ProjLogo} className="projectLogo"/>
-
                   <a href="http://homesfromthefuture.com" className="projIntroLinks projIntroLinkOne">
                     <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
                   </a>
@@ -132,63 +116,57 @@ export default class ProjectThree extends React.Component {
                     <i className="ion-ios-bolt-outline"></i>&nbsp;&nbsp;VIEW PROJECT
                   </button>
                 </Link>
-
               </div>
             </div>
-
           </div>
-
         </div>
+        <div className="projTextWrap projTextWrapBody">
+          <Element name="projects"></Element>
 
-          <div className="projTextWrap projTextWrapBody">
-            <Element name="projects"></Element>
+          <h2 className="projHeaderTxt">Wireframes</h2>
+          <p className="projDesc">The main goal of the wireframes was to house many different media types and large amounts of text in an informative and clear way. The navigation elements are separated from the post content on layouts to aid with navigation. The iterations varied throughout the wireframing, mockups and even development process for this project, based on the best suited way to display product and article info.</p>
+          <LazyLoad height={300}><Gallery photos={ProjThreePartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
-            <h2 className="projHeaderTxt">Wireframes</h2>
-            <p className="projDesc">The main goal of the wireframes was to house many different media types and large amounts of text in an informative and clear way. The navigation elements are separated from the post content on layouts to aid with navigation. The iterations varied throughout the wireframing, mockups and even development process for this project, based on the best suited way to display product and article info.</p>
-            <LazyLoad height={0}><Gallery photos={ProjThreePartTwo} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <h2 className="projHeaderTxt">UI</h2>
+          <p className="projDesc">Interface elements use a modern and clean stylistic approach combining the brand style and wireframe layouts. Housing the content in boxes helped to use whitespace to separate elements, and the branding colours/styles helped to further this idea. Mobile layouts re-organize the sidebars to work below the content, and let the content be the main focus. This stage also involved a lot of refactoring to the product template (which later went through further revisions in the development stage).</p>
+          <LazyLoad height={300}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
-            <h2 className="projHeaderTxt">UI</h2>
-            <p className="projDesc">Interface elements use a modern and clean stylistic approach combining the brand style and wireframe layouts. Housing the content in boxes helped to use whitespace to separate elements, and the branding colours/styles helped to further this idea. Mobile layouts re-organize the sidebars to work below the content, and let the content be the main focus. This stage also involved a lot of refactoring to the product template (which later went through further revisions in the development stage).</p>
-            <LazyLoad height={0}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <h2 className="projHeaderTxt">Branding</h2>
+          <p className="projDesc">The branding imagery and style for this project was based on technology and connectedness, as this is displayed prominently in the logo especially. The button and element styling uses playful colours and clean text to also make the topic of “home automation” seem inviting and fun rather than overwhelming. The header typography uses a monospace font to mimic a typewriter style, to add some extra originality to the overall layouts.</p>
+          <LazyLoad height={300}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
-            <h2 className="projHeaderTxt">Branding</h2>
-            <p className="projDesc">The branding imagery and style for this project was based on technology and connectedness, as this is displayed prominently in the logo especially. The button and element styling uses playful colours and clean text to also make the topic of “home automation” seem inviting and fun rather than overwhelming. The header typography uses a monospace font to mimic a typewriter style, to add some extra originality to the overall layouts.</p>
-            <LazyLoad height={0}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <h2 className="projHeaderTxt">Features</h2>
+          <p className="projDesc">Post page features bold and enlarged media elements, that behave well between screen sizes. The menu contains a modal with many features for navigation through the website, with all elements being enlarged on most screen sizes to optimize the interactivity. Contains a separated post template to highlight features of the product, and article template which is better suited for longer text articles about guides and concepts.</p>
+          <LazyLoad height={300}><Gallery photos={ProjThreePartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
-            <h2 className="projHeaderTxt">Features</h2>
-            <p className="projDesc">Post page features bold and enlarged media elements, that behave well between screen sizes. The menu contains a modal with many features for navigation through the website, with all elements being enlarged on most screen sizes to optimize the interactivity. Contains a separated post template to highlight features of the product, and article template which is better suited for longer text articles about guides and concepts.</p>
-            <LazyLoad height={0}><Gallery photos={ProjThreePartFive} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <h2 className="projHeaderTxt">Tech</h2>
+          <p className="projDesc">Build on wordpress, with a custom theme built into it from scratch. The theme uses some custom plugins for post management, and some pre built plugins for Mailchimp, analytics, and content management. Images are optimized for speed and styling is written with vanilla CSS, using some features from BEM methodology, and well structured content organization in the theme style files. Theme functionality also has many customized elements using PHP for content, layout, and data organization.</p>
 
-            <h2 className="projHeaderTxt">Tech</h2>
-            <p className="projDesc">Build on wordpress, with a custom theme built into it from scratch. The theme uses some custom plugins for post management, and some pre built plugins for Mailchimp, analytics, and content management. Images are optimized for speed and styling is written with vanilla CSS, using some features from BEM methodology, and well structured content organization in the theme style files. Theme functionality also has many customized elements using PHP for content, layout, and data organization.</p>
+          <ReactTooltip />
 
-            <ReactTooltip />
+          <img src={Wordpress} className="techIcon" data-tip="Wordpress" data-effect="solid"/>
+          <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
+          <img src={Php} className="techIcon" data-tip="PHP" data-effect="solid"/>
+          <img src={Html} className="techIcon" data-tip="HTML" data-effect="solid"/>
+          <img src={Css} className="techIcon" data-tip="CSS" data-effect="solid"/>
+          <img src={Litmus} className="techIcon" data-tip="Litmus" data-effect="solid"/>
+          <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
+          <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
+          <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/><br />
 
-            <img src={Wordpress} className="techIcon" data-tip="Wordpress" data-effect="solid"/>
-            <img src={Javascript} className="techIcon" data-tip="Javascript" data-effect="solid"/>
-            <img src={Php} className="techIcon" data-tip="PHP" data-effect="solid"/>
-            <img src={Html} className="techIcon" data-tip="HTML" data-effect="solid"/>
-            <img src={Css} className="techIcon" data-tip="CSS" data-effect="solid"/>
-            <img src={Litmus} className="techIcon" data-tip="Litmus" data-effect="solid"/>
-            <img src={Sketch} className="techIcon" data-tip="Sketch" data-effect="solid"/>
-            <img src={Illustrator} className="techIcon" data-tip="Illustrator" data-effect="solid"/>
-            <img src={Photoshop} className="techIcon" data-tip="Photoshop" data-effect="solid"/><br />
-
-            <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
-            <a href="terminal-ui" className="paginationLinkWrap">
-              <div style={PaginationImgPrev} className="projPagination">
-                <img src={PaginationLogoPrev} className="projPaginationLogo terminalPagination" />
-              </div>
-            </a>
-            <a href="odd-scenes" className="paginationLinkWrap">
-            <div style={PaginationImgNext} className="projPagination">
-              <img src={PaginationLogoNext} className="projPaginationLogo" />
+          <h2 className="projHeaderTxt projHeaderTxtLast">More Projects</h2><br />
+          <a href="terminal-ui" className="paginationLinkWrap">
+            <div style={PaginationImgPrev} className="projPagination">
+              <img src={PaginationLogoPrev} className="projPaginationLogo terminalPagination" />
             </div>
-            </a>
-
+          </a>
+          <a href="odd-scenes" className="paginationLinkWrap">
+          <div style={PaginationImgNext} className="projPagination">
+            <img src={PaginationLogoNext} className="projPaginationLogo" />
           </div>
+          </a>
         </div>
-
+      </div>
     )
   }
 }
