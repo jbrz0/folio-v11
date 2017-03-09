@@ -132,11 +132,11 @@ export default class ProjectFour extends React.Component {
 
           <h2 className="projHeaderTxt">UI</h2>
           <p className="projDesc">At this stage the decision of what artwork to add as the floating elements to the chosen layouts was made, as well as the best flow/layout to go with. The elements used the bright colours to pop out of the layout and give each section a distinct call to action. More of the text and flow was mapped out also in this stage, after incorporating the developed branding style.</p>
-          <LazyLoad height={300}><Gallery photos={ProjFourPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjFourPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Branding</h2>
           <p className="projDesc">The brand itself is built on style incorporating abstracted shapes, bright colours and sometimes using different media/technology to make its pieces. The logo plays on this with a chaotic layout of some basic shapes, the same way the illustration elements are made. The colours and shapes use a bold turquoise and purple combination that were initially being used years ago as its colours, with more accents and shading being added to the palette.</p>
-          <LazyLoad height={300}><Gallery photos={ProjFourPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjFourPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Features</h2>
           <p className="projDesc">High quality images optimized and compressed to load fast and display well. Responsive behaviour of unique style grids flows well into smaller screens. Shop page, modal loads up a menu with information and a bold direct link to product.</p>

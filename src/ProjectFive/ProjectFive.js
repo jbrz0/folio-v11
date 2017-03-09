@@ -127,11 +127,11 @@ export default class ProjectFive extends React.Component {
 
           <h2 className="projHeaderTxt">UI</h2>
           <p className="projDesc">From the iterations built in the wireframes, and branding styling, more re arranging and application of brand style was put into the UI mockups. The bold branding style was put into the elements to guide the user to the necessary features of the app. The welcome page is also designed to showcase quickly and guide the user to the drawing app or drawing templates.</p>
-          <LazyLoad height={300}><Gallery photos={ProjFivePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjFivePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Branding</h2>
           <p className="projDesc">The initial ideas for the branding styles are based on graffiti, playful colours and urban feel to it. The sharp edges of the elements, bold typography, and loud colourful images/content everywhere add to this style. The logo development process involved iconography associated with paint, art, urban, graffiti. It ended up as a word mark incorporating paint trails on a rounded “wall” or canvas.</p>
-          <LazyLoad height={300}><Gallery photos={ProjFivePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjFivePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Features</h2>
           <p className="projDesc">Canvas has quick responsive behaviour to click or touch on any device its used on. Template files can be loaded in the background to paint over. Ability to export multiple pngs of canvas in the same session. Canvas editor features a drawer of tools that minimize and get out of the canvas area when minimized.</p>

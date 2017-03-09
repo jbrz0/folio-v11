@@ -129,11 +129,11 @@ export default class ProjectThree extends React.Component {
 
           <h2 className="projHeaderTxt">UI</h2>
           <p className="projDesc">Interface elements use a modern and clean stylistic approach combining the brand style and wireframe layouts. Housing the content in boxes helped to use whitespace to separate elements, and the branding colours/styles helped to further this idea. Mobile layouts re-organize the sidebars to work below the content, and let the content be the main focus. This stage also involved a lot of refactoring to the product template (which later went through further revisions in the development stage).</p>
-          <LazyLoad height={300}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Branding</h2>
           <p className="projDesc">The branding imagery and style for this project was based on technology and connectedness, as this is displayed prominently in the logo especially. The button and element styling uses playful colours and clean text to also make the topic of “home automation” seem inviting and fun rather than overwhelming. The header typography uses a monospace font to mimic a typewriter style, to add some extra originality to the overall layouts.</p>
-          <LazyLoad height={300}><Gallery photos={ProjThreePartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjThreePartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Features</h2>
           <p className="projDesc">Post page features bold and enlarged media elements, that behave well between screen sizes. The menu contains a modal with many features for navigation through the website, with all elements being enlarged on most screen sizes to optimize the interactivity. Contains a separated post template to highlight features of the product, and article template which is better suited for longer text articles about guides and concepts.</p>
