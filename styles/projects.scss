@@ -374,6 +374,11 @@ div#Gallery img {
     transform: none;
   }
 }
+
+.type-dark::before {
+  border-top-color: $red !important;
+  opacity: 1 !important;
+}
 .type-dark {
   background: $red !important;
   opacity: 1 !important;
