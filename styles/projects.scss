@@ -375,15 +375,16 @@ div#Gallery img {
   }
 }
 
-.type-dark::before {
-  border-top-color: $red !important;
-  opacity: 1 !important;
-}
+// .type-dark::before {
+//   border-top-color: $red !important;
+//   opacity: 1 !important;
+// }
 .type-dark {
   background: $red !important;
   opacity: 1 !important;
 }
-.type-dark::after {
+
+.type-dark.place-right:after {
   border-top-color: $red !important;
   opacity: 1 !important;
 }
