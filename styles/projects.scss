@@ -384,8 +384,8 @@ div#Gallery img {
   opacity: 1 !important;
 }
 
-.type-dark.place-right:after {
-  border-top-color: $red !important;
+.type-dark.place-right::after {
+  border-right-color: $red !important;
   opacity: 1 !important;
 }
 
