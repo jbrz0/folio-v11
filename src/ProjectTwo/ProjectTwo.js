@@ -128,11 +128,11 @@ export default class ProjectTwo extends React.Component {
 
           <h2 className="projHeaderTxt">UI</h2>
           <p className="projDesc">The re factored UI mockups are re adjusted and in this stage added a few more responsive behaviours of the cards themselves. The integration of the branding style into the elements helped to adjust the main layout and card contents. This stage also helped to use the previously built elements to focus on a few key layouts and flow of the project.</p>
-          <LazyLoad height={300}><Gallery photos={ProjTwoPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjTwoPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Branding</h2>
           <p className="projDesc">Overall style of the kit library is built on a terminal, slightly sci-fi theme, with old fashioned terminal use elements mixed with modern web development layout and style techniques. The colours incorporate a colour mix while still maintaining this look, as well as thin, futuristic looking typography. The logo (as well as colours and other elements) are meant to be swapped, but aim to provide a good base with this library. The final logo option for this project uses a T icon with a retro/futuristic style using a bold T and word mark of the word ‘Terminal’.</p>
-          <LazyLoad height={300}><Gallery photos={ProjTwoPartFour} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
+          <LazyLoad height={300}><Gallery photos={ProjTwoPartThree} preloadNextImage={false} /></LazyLoad><div className="clearfix"></div>
 
           <h2 className="projHeaderTxt">Features</h2>
           <p className="projDesc">The library makes use of two different window behaviours, slideshow featuring specific cards - or scrolling with many cards. The ability to easily add terminal commands attached to pages built in, including multiple queries for the same page (ex: Home, Welcome, 0 can all load /home layout). responsive customized grid, for easily fitting in card designs.</p>
