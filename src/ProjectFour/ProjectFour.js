@@ -98,7 +98,7 @@ export default class ProjectFour extends React.Component {
               <div className="projIntroTop">
                 <div className="projIntroLinksWrap">
                   <img src={ProjLogo} className="projectLogo"/>
-                  <a href="http://oddscenes.us" className="projIntroLinks projIntroLinkOne">
+                  <a href="http://odd-scenes.netlify.com" className="projIntroLinks projIntroLinkOne">
                     <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
                   </a>
                   <a href="https://github.com/brz0/odd-scenes" className="projIntroLinks projIntroLinkTwo">

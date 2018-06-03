@@ -96,7 +96,7 @@ export default class ProjectFive extends React.Component {
               <div className="projIntroTop">
                 <div className="projIntroLinksWrap">
                   <img src={ProjLogo} className="projectLogo"/>
-                  <a href="http://walltagged.us" className="projIntroLinks projIntroLinkOne">
+                  <a href="http://walltagged.netlify.com" className="projIntroLinks projIntroLinkOne">
                     <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
                   </a>
                   <a href="https://github.com/brz0/walltagged" className="projIntroLinks projIntroLinkTwo">

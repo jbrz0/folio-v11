@@ -95,7 +95,7 @@ export default class ProjectTwo extends React.Component {
               <div className="projIntroTop">
                 <div className="projIntroLinksWrap">
                   <img src={ProjLogo} className="projectLogo"/>
-                  <a href="http://terminalui.info" className="projIntroLinks projIntroLinkOne">
+                  <a href="http://terminal-ui.netlify.com" className="projIntroLinks projIntroLinkOne">
                     <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
                   </a>
                   <a href="https://github.com/brz0/terminal-ui" className="projIntroLinks projIntroLinkTwo">

@@ -96,7 +96,7 @@ export default class ProjectOne extends React.Component {
               <div className="projIntroTop">
                 <div className="projIntroLinksWrap">
                   <img src={ProjLogo} className="projectLogo"/>
-                  <a href="http://chartsuite.us" className="projIntroLinks projIntroLinkOne">
+                  <a href="http://chart-suite.netlify.com" className="projIntroLinks projIntroLinkOne">
                     <i className="ion-ios-world-outline"></i>&nbsp;&nbsp;website
                   </a>
                   <a href="https://github.com/brz0/chart-suite" className="projIntroLinks projIntroLinkTwo">
